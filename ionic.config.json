@@ -1,0 +1,7 @@
+{
+  "name": "VemComigo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

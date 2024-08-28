@@ -1,0 +1,111 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import '@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import '@ionic/angular/css/padding.css';
+@import '@ionic/angular/css/float-elements.css';
+@import '@ionic/angular/css/text-alignment.css';
+@import '@ionic/angular/css/text-transformation.css';
+@import '@ionic/angular/css/flex-utils.css';
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+@import '@ionic/angular/css/palettes/dark.class.css';
+
+/**
+  * Fonts imported
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/**
+  * New color variables defined on figma
+*/
+:root {
+  --ion-color-app-black: #252627;
+  --ion-color-app-black-rgb: 37, 38, 39;
+  --ion-color-app-black-contrast: #ffffff;
+  --ion-color-app-black-contrast-rgb: 255, 255, 255;
+  --ion-color-app-black-shade: #212122;
+  --ion-color-app-black-tint: #3b3c3d;
+  --ion-color-app-yellow: #edb230;
+  --ion-color-app-yellow-rgb: 237, 178, 48;
+  --ion-color-app-yellow-contrast: #000000;
+  --ion-color-app-yellow-contrast-rgb: 0, 0, 0;
+  --ion-color-app-yellow-shade: #d19d2a;
+  --ion-color-app-yellow-tint: #efba45;
+  --ion-color-app-blue: #028090;
+  --ion-color-app-blue-rgb: 2, 128, 144;
+  --ion-color-app-blue-contrast: #ffffff;
+  --ion-color-app-blue-contrast-rgb: 255, 255, 255;
+  --ion-color-app-blue-shade: #02717f;
+  --ion-color-app-blue-tint: #1b8d9b;
+  --ion-color-app-light-blue: #00bad1;
+  --ion-color-app-light-blue-rgb: 0, 186, 209;
+  --ion-color-app-light-blue-contrast: #000000;
+  --ion-color-app-light-blue-contrast-rgb: 0, 0, 0;
+  --ion-color-app-light-blue-shade: #00a4b8;
+  --ion-color-app-light-blue-tint: #1ac1d6;
+}
+
+.ion-color-app-yellow {
+  --ion-color-base: var(--ion-color-app-yellow);
+  --ion-color-base-rgb: var(--ion-color-app-yellow-rgb);
+  --ion-color-contrast: var(--ion-color-app-yellow-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-app-yellow-contrast-rgb);
+  --ion-color-shade: var(--ion-color-app-yellow-shade);
+  --ion-color-tint: var(--ion-color-app-yellow-tint);
+}
+
+.ion-color-app-black {
+  --ion-color-base: var(--ion-color-app-black);
+  --ion-color-base-rgb: var(--ion-color-app-black-rgb);
+  --ion-color-contrast: var(--ion-color-app-black-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-app-black-contrast-rgb);
+  --ion-color-shade: var(--ion-color-app-black-shade);
+  --ion-color-tint: var(--ion-color-app-black-tint);
+}
+
+.ion-color-app-blue {
+  --ion-color-base: var(--ion-color-app-blue);
+  --ion-color-base-rgb: var(--ion-color-app-blue-rgb);
+  --ion-color-contrast: var(--ion-color-app-blue-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-app-blue-contrast-rgb);
+  --ion-color-shade: var(--ion-color-app-blue-shade);
+  --ion-color-tint: var(--ion-color-app-blue-tint);
+}
+
+.ion-color-app-light-blue {
+  --ion-color-base: var(--ion-color-app-light-blue);
+  --ion-color-base-rgb: var(--ion-color-app-light-blue-rgb);
+  --ion-color-contrast: var(--ion-color-app-light-blue-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-app-light-blue-contrast-rgb);
+  --ion-color-shade: var(--ion-color-app-light-blue-shade);
+  --ion-color-tint: var(--ion-color-app-light-blue-tint);
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+

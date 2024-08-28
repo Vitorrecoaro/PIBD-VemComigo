@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+ion-input {
+  font-weight: bold;
+  font-size: 1rem;
+  --border-color: #858c94;
+  --border-radius: 16px !important;
+  --padding-bottom: 0.75rem;
+  --padding-top: 0.75rem;
+  --padding-end: 1rem;
+  --padding-start: 1rem;
+  --highlight-color-focused: var(--ion-color-app-blue);
+  --background: #fff;
+
+  ion-icon {
+    width: 24px;
+    height: 24px;
+    color: #858c94;
+  }
+}
+
+p {
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  color: #09101d;
+  font-weight: 800;
+}

@@ -130,6 +130,7 @@ CREATE TABLE
     IDRemetente VARCHAR(50) NOT NULL,
     IDDestinatario VARCHAR(50) NOT NULL,
     TimeStampEnvio VARCHAR(24) NOT NULL,
+    TimeStampUltimaEdicao TIMESTAMP NOT NULL,
     TextoMensagem VARCHAR(255) NOT NULL,
     IDComunica TEXT GENERATED ALWAYS AS (
       IDRemetente || '' || IDDestinatario || '' || TimeStampEnvio::TEXT

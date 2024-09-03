@@ -1,20 +1,20 @@
--- View para retornar os dados do veiculo exclusiva para motorista
-CREATE VIEW VeiculoView AS
-SELECT
-    V.RENAVAM,                
-    V.Modelo,                 
-    V.Tipo,                    
-    V.Cor,                     
-    V.TamanhoPortaMalas,       
-    V.Placa,                   
-    V.Ano,                    
-    V.Proprietario,            
-    V.RelacaoComProprietario,  
-    U.IDUsuario,               
-    U.Nome AS NomeMotorista   
-FROM
-    Veiculo V
-INNER JOIN
-    CaronistaVeiculo CV ON V.RENAVAM = CV.RENAVAM -- Associa veículos aos motoristas através da tabela CaronistaVeiculo
-INNER JOIN
-    Usuario U ON CV.IDUsuario = U.IDUsuario       -- Associa o motorista ao usuário para pegar os detalhes do motorista
+CREATE OR REPLACE VIEW VeiculoView AS
+SELECT 
+    u.IDUsuario AS MotoristaID,
+    u.Nome AS NomeMotorista,
+    v.RENAVAM,
+    v.Modelo,
+    v.Tipo,
+    v.Cor,
+    v.TamanhoPortaMalas,
+    v.Placa,
+    v.Ano,
+    cv.RelacaoComProprietario
+FROM 
+    Usuario u
+INNER JOIN 
+    Caronista c ON u.IDUsuario = c.IDUsuario
+INNER JOIN 
+    CaronistaVeiculo cv ON c.IDUsuario = cv.IDUsuario
+INNER JOIN 
+    Veiculo v ON cv.RENAVAM = v.RENAVAM;

@@ -23,50 +23,39 @@ VALUES
 
 -- Criação da procedure para trocar o usuario entre caronista e caroneiro
 CREATE OR REPLACE PROCEDURE ChangeRole(
-    IN IDUsuarioInput VARCHAR(50),
-    IN NovoPapel VARCHAR(10) -- 'Caronista' ou 'Caroneiro'
+  p_user_id VARCHAR(50),
+  p_new_role VARCHAR(10)
 )
 LANGUAGE plpgsql
 AS $$
 BEGIN
-    -- Verifica se o novo papel é 'Caronista'
-    IF NovoPapel = 'Caronista' THEN
-        -- Verifica se o usuário já é um caronista
-        IF EXISTS (SELECT 1 FROM Caronista WHERE IDUsuario = IDUsuarioInput) THEN
-            RAISE NOTICE 'Usuário já é Caronista';
-        ELSE
-            -- Remove o usuário da tabela Caroneiro, se existir
-            DELETE FROM Caroneiro WHERE IDUsuario = IDUsuarioInput;
-            
-            -- Insere o usuário na tabela Caronista
-            INSERT INTO Caronista (IDUsuario, CNH, ValidadeCNH, QtdViagens, MediaNotaCaronista)
-            VALUES (IDUsuarioInput, '00000000000', '2099-12-31', 0, NULL); -- Exemplo de CNH e validade, ajuste conforme necessário
-            
-            RAISE NOTICE 'Usuário alterado para Caronista';
-        END IF;
+  IF p_new_role = 'Caronista' THEN
+    -- Remover o usuário da tabela Caroneiro, se existir
+    DELETE FROM Caroneiro WHERE IDUsuario = p_user_id;
 
-    -- Verifica se o novo papel é 'Caroneiro'
-    ELSIF NovoPapel = 'Caroneiro' THEN
-        -- Verifica se o usuário já é um caroneiro
-        IF EXISTS (SELECT 1 FROM Caroneiro WHERE IDUsuario = IDUsuarioInput) THEN
-            RAISE NOTICE 'Usuário já é Caroneiro';
-        ELSE
-            -- Remove o usuário da tabela Caronista, se existir
-            DELETE FROM Caronista WHERE IDUsuario = IDUsuarioInput;
-            
-            -- Insere o usuário na tabela Caroneiro
-            INSERT INTO Caroneiro (IDUsuario, QtdViagens, MediaNotaCaroneiro)
-            VALUES (IDUsuarioInput, 0, NULL);
-            
-            RAISE NOTICE 'Usuário alterado para Caroneiro';
-        END IF;
+    -- Inserir o usuário na tabela Caronista
+    INSERT INTO Caronista (IDUsuario, CNH, ValidadeCNH, QtdViagens, MediaNotaCaronista)
+    SELECT IDUsuario, CNH, ValidadeCNH, QtdViagens, MediaNotaCaronista
+    FROM Caronista WHERE IDUsuario = p_user_id
+    ON CONFLICT (IDUsuario) DO NOTHING;
 
-    ELSE
-        -- Se o novo papel não for nem 'Caronista' nem 'Caroneiro', lança um erro
-        RAISE EXCEPTION 'Papel inválido. Use "Caronista" ou "Caroneiro".';
-    END IF;
+  ELSIF p_new_role = 'Caroneiro' THEN
+    -- Remover o usuário da tabela Caronista, se existir
+    DELETE FROM Caronista WHERE IDUsuario = p_user_id;
+
+    -- Inserir o usuário na tabela Caroneiro
+    INSERT INTO Caroneiro (IDUsuario, QtdViagens, MediaNotaCaroneiro)
+    SELECT IDUsuario, QtdViagens, MediaNotaCaroneiro
+    FROM Caroneiro WHERE IDUsuario = p_user_id
+    ON CONFLICT (IDUsuario) DO NOTHING;
+
+  ELSE
+    -- Levantar exceção se o papel for inválido
+    RAISE EXCEPTION 'Papel invalido. Papel deve ser ''Caronista'' ou ''Caroneiro''.';
+  END IF;
 END;
 $$;
+
 
 -- Chamando a procedure
 

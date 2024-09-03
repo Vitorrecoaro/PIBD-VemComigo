@@ -50,6 +50,7 @@ CREATE TABLE
   Caronista (
     IDUsuario VARCHAR(50) PRIMARY KEY NOT NULL,
     CNH varchar(50) NOT NULL,
+    ValidadeCNH VARCHAR(24) NOT NULL,
     QtdViagens INT NOT NULL,
     MediaNotaCaronista INT,
     FOREIGN KEY (IDUsuario) REFERENCES Usuario (IDUsuario) ON DELETE CASCADE

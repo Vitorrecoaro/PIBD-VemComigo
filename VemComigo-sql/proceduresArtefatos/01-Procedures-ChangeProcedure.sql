@@ -29,32 +29,53 @@ CREATE OR REPLACE PROCEDURE ChangeRole(
 LANGUAGE plpgsql
 AS $$
 BEGIN
+  -- Verifica se o novo papel é 'Caronista'
   IF p_new_role = 'Caronista' THEN
-    -- Remover o usuário da tabela Caroneiro, se existir
+    -- Remove o usuário da tabela Caroneiro se ele estiver lá
     DELETE FROM Caroneiro WHERE IDUsuario = p_user_id;
-
-    -- Inserir o usuário na tabela Caronista
+    
+    -- Insere o usuário na tabela Caronista, mantendo os dados já existentes
     INSERT INTO Caronista (IDUsuario, CNH, ValidadeCNH, QtdViagens, MediaNotaCaronista)
-    SELECT IDUsuario, CNH, ValidadeCNH, QtdViagens, MediaNotaCaronista
-    FROM Caronista WHERE IDUsuario = p_user_id
+    SELECT 
+      u.IDUsuario, 
+      c.CNH, 
+      c.ValidadeCNH, 
+      COALESCE(c.QtdViagens, 0), 
+      COALESCE(c.MediaNotaCaronista, NULL)
+    FROM 
+      Usuario u
+    LEFT JOIN 
+      Caronista c ON u.IDUsuario = c.IDUsuario
+    WHERE 
+      u.IDUsuario = p_user_id
     ON CONFLICT (IDUsuario) DO NOTHING;
 
+  -- Verifica se o novo papel é 'Caroneiro'
   ELSIF p_new_role = 'Caroneiro' THEN
-    -- Remover o usuário da tabela Caronista, se existir
+    -- Remove o usuário da tabela Caronista se ele estiver lá
     DELETE FROM Caronista WHERE IDUsuario = p_user_id;
-
-    -- Inserir o usuário na tabela Caroneiro
+    
+    -- Insere o usuário na tabela Caroneiro, mantendo os dados já existentes
     INSERT INTO Caroneiro (IDUsuario, QtdViagens, MediaNotaCaroneiro)
-    SELECT IDUsuario, QtdViagens, MediaNotaCaroneiro
-    FROM Caroneiro WHERE IDUsuario = p_user_id
+    SELECT 
+      u.IDUsuario, 
+      co.QtdViagens, 
+      co.MediaNotaCaroneiro
+    FROM 
+      Usuario u
+    LEFT JOIN 
+      Caroneiro co ON u.IDUsuario = co.IDUsuario
+    WHERE 
+      u.IDUsuario = p_user_id
     ON CONFLICT (IDUsuario) DO NOTHING;
 
+  -- Se o papel não for válido, levanta uma exceção
   ELSE
-    -- Levantar exceção se o papel for inválido
     RAISE EXCEPTION 'Papel invalido. Papel deve ser ''Caronista'' ou ''Caroneiro''.';
   END IF;
 END;
 $$;
+
 
 
 -- Chamando a procedure

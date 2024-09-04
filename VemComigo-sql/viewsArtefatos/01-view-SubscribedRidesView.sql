@@ -1,5 +1,5 @@
 --Definição da view SubscribedRidesView
-CREATE VIEW CaronasComCaronista AS
+CREATE VIEW SubscribedRidesView AS
 SELECT 
     c.IDCarona,
     c.DataCarona,

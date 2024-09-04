@@ -6,6 +6,7 @@ CREATE TABLE
     Foto BYTEA NOT NULL,
     Genero VARCHAR(30) NOT NULL,
     Email VARCHAR(255) UNIQUE NOT NULL,
+    Senha VARCHAR(255) NOT NULL,
     Nacionalidade BOOLEAN NOT NULL
   );
 

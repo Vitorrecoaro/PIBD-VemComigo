@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: VemComigoApp
+    environment:
+      POSTGRES_USER: PIBD
+      POSTGRES_PASSWORD: PIBD
+      POSTGRES_DB: VemComigoDB
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./dbdata:/var/lib/postgresql/data
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+
+  adminer:
+    image: adminer
+    ports:
+      - '8080:8080'  # Adminer será acessado via localhost:8080
+
+# Como rodar o backend
+# 1. Acesse a pasta vem-comigo-backend
+# 2. instale as dependências com `npm i`
+# 3. Rode o docker com `docker-compose up`
+# 4. Acesse o banco de dados com o Adminer em localhost:8080
+# 5. Credenciais em ordem: postgreSQL, postgres, PIBD, PIBD, VemComigoDB

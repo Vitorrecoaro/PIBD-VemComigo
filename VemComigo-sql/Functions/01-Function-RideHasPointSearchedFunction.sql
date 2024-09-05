@@ -10,20 +10,21 @@ OR REPLACE FUNCTION RideHasPointSearchedFunction (
 ) RETURNS BOOL AS $$
 DECLARE
     cursorPontosIntermediarios CURSOR FOR 
-        SELECT geom FROM pontointermediario WHERE idcarona = idCarona;
-    currentGeom geometry;
+        SELECT latitude, longitude FROM pontointermediario WHERE idcarona = idCarona;
+    currentLatitude NUMERIC (9,6);
+    currentLongitude NUMERIC (9,6);
     maxDistance NUMERIC(9, 6) := 20000;
     distance NUMERIC(9,6);
 BEGIN
     OPEN cursorPontosIntermediarios;
 
     LOOP
-        FETCH NEXT FROM cursorPontosIntermediarios INTO currentGeom;
+        FETCH NEXT FROM cursorPontosIntermediarios INTO currentLatitude, currentLongitude;
         EXIT WHEN NOT FOUND;
 
-        distance := ST_Distance(ST_MakePoint(latitude, longitude)::geography, currentGeom);
+        distance := ST_Distance(ST_MakePoint(latitude, longitude)::geography, ST_MakePoint(currentLatitude, currentLongitude)::geography);
 
-        IF distance > maxDistance THEN
+        IF distance <= maxDistance THEN
             RETURN TRUE;
         END IF;
     END LOOP;

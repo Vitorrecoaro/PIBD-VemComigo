@@ -50,7 +50,6 @@ CREATE TABLE
   Caronista (
     IDUsuario VARCHAR(50) PRIMARY KEY NOT NULL,
     CNH varchar(50) NOT NULL,
-    ValidadeCNH VARCHAR(24) NOT NULL,
     QtdViagens INT NOT NULL,
     MediaNotaCaronista INT,
     FOREIGN KEY (IDUsuario) REFERENCES Usuario (IDUsuario) ON DELETE CASCADE
@@ -131,7 +130,6 @@ CREATE TABLE
     IDRemetente VARCHAR(50) NOT NULL,
     IDDestinatario VARCHAR(50) NOT NULL,
     TimeStampEnvio VARCHAR(24) NOT NULL,
-    TimeStampUltimaEdicao TIMESTAMP NOT NULL,
     TextoMensagem VARCHAR(255) NOT NULL,
     IDComunica TEXT GENERATED ALWAYS AS (
       IDRemetente || '' || IDDestinatario || '' || TimeStampEnvio::TEXT

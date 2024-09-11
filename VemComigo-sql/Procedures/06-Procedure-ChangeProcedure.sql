@@ -31,8 +31,6 @@ AS $$
 BEGIN
   -- Verifica se o novo papel é 'Caronista'
   IF p_new_role = 'Caronista' THEN
-    -- Remove o usuário da tabela Caroneiro se ele estiver lá
-    DELETE FROM Caroneiro WHERE IDUsuario = p_user_id;
     
     -- Insere o usuário na tabela Caronista, mantendo os dados já existentes
     INSERT INTO Caronista (IDUsuario, CNH, ValidadeCNH, QtdViagens, MediaNotaCaronista)
@@ -52,8 +50,6 @@ BEGIN
 
   -- Verifica se o novo papel é 'Caroneiro'
   ELSIF p_new_role = 'Caroneiro' THEN
-    -- Remove o usuário da tabela Caronista se ele estiver lá
-    DELETE FROM Caronista WHERE IDUsuario = p_user_id;
     
     -- Insere o usuário na tabela Caroneiro, mantendo os dados já existentes
     INSERT INTO Caroneiro (IDUsuario, QtdViagens, MediaNotaCaroneiro)

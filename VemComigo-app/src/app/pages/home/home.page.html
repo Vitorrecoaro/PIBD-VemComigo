@@ -6,11 +6,16 @@
       <p>Entre com suas credenciais</p>
 
       <div class="input-container">
-        <app-generic-input-text [placeholder]="'E-mail'"></app-generic-input-text>
-        <app-generic-input-text [placeholder]="'Senha'"></app-generic-input-text>
+        <app-generic-input-text [placeholder]="'E-mail'" [type]="'email'"></app-generic-input-text>
+        <app-generic-input-text [placeholder]="'Senha'" [type]="'password'"></app-generic-input-text>
       </div>
 
       <p class="forgot-password-text">Esqueceu a senha?</p>
+
+      <div class="buttons-container">
+        <app-button [text]="'Entrar'" [color]="'app-black'"></app-button>
+        <app-button [text]="'Cadastre-se'" [color]="'app-yellow'"></app-button>
+      </div>
     </div>
   </div>
 </ion-content>

@@ -12,3 +12,9 @@ export type Ride = {
   finalPointTime: string;
   driver: Driver;
 };
+
+export type RideFilters = {
+  date: Date;
+  initialPoint: string;
+  finalPoint: string;
+};

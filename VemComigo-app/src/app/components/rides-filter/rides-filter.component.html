@@ -1,0 +1,31 @@
+<div class="ride-resumed-container">
+  <h4>
+    <div class="right-info">
+      {{ filters.date | date: 'dd/MM/yyyy' }}
+    </div>
+
+    <div class="left-info">
+      <ion-icon src="../../../assets/icons/calendar.svg" size="large"></ion-icon>
+    </div>
+  </h4>
+
+  <div class="locations-container">
+    <h4>
+      <div class="right-info">De: {{ filters.initialPoint }}</div>
+
+      <div class="left-info">
+        <ion-icon src="../../../assets/icons/pin.svg" size="large"></ion-icon>
+      </div>
+    </h4>
+
+    <hr />
+
+    <h4>
+      <div class="right-info">Para: {{ filters.finalPoint }}</div>
+
+      <div class="left-info">
+        <ion-icon src="../../../assets/icons/pin.svg" size="large"></ion-icon>
+      </div>
+    </h4>
+  </div>
+</div>

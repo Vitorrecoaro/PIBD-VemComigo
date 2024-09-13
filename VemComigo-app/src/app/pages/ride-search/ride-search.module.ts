@@ -9,9 +9,10 @@ import { RideSearchPageRoutingModule } from './ride-search-routing.module';
 import { RideSearchPage } from './ride-search.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RideSearchCardComponent } from 'src/app/components/ride-search-card/ride-search-card.component';
+import { RideResumedComponent } from 'src/app/components/ride-resumed/ride-resumed.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, RideSearchPageRoutingModule, SharedModule],
-  declarations: [RideSearchPage, RideSearchCardComponent],
+  declarations: [RideSearchPage, RideSearchCardComponent, RideResumedComponent],
 })
 export class RideSearchPageModule {}

@@ -1,0 +1,41 @@
+.ride-resumed-container {
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #858c94;
+  padding: 12px 16px;
+  align-items: center;
+  color: #09101d;
+  gap: 16px;
+}
+
+ion-icon {
+  color: #858c94;
+}
+
+h4 {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-info,
+.right-info {
+  font-size: 1.15rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.locations-container,
+.driver-container {
+  width: 100%;
+}
+
+hr {
+  background-color: #dadee3;
+  height: 2px;
+}

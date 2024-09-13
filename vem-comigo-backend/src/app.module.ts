@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
@@ -8,9 +9,9 @@ import { AppService } from './app.service';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'PIBD',
-      password: 'PIBD',
-      database: 'VemComigoDB',
+      username: 'mymm',
+      password: 'Postgres802097',
+      database: 'vemcomigodb',
       autoLoadEntities: true,
       synchronize: false, // Defina como 'true' para sincronizar automaticamente o schema.
     }),

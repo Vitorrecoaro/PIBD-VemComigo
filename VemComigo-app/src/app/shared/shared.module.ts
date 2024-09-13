@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { InputTextComponent } from '../components/generic/input-text/input-text.component';
 import { IonicModule } from '@ionic/angular';
 import { ButtonComponent } from '../components/generic/button/button.component';
-import { BottomNavBarComponent } from '../components/bottom-nav-bar/bottom-nav-bar.component';
 
 @NgModule({
-  declarations: [InputTextComponent, ButtonComponent, BottomNavBarComponent],
+  declarations: [InputTextComponent, ButtonComponent],
   imports: [CommonModule, IonicModule],
-  exports: [InputTextComponent, ButtonComponent, BottomNavBarComponent],
+  exports: [InputTextComponent, ButtonComponent],
 })
 export class SharedModule {}

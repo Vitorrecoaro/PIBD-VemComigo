@@ -1,6 +1,18 @@
-ion-card {
-  padding: 1rem 1rem 2rem;
+.card-container {
   display: flex;
-  gap: 10px;
   flex-direction: column;
+  align-items: center;
+
+  ion-card {
+    padding: 1rem 1rem 2rem;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  app-button {
+    position: relative;
+    top: -32px;
+  }
 }

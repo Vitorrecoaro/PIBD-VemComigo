@@ -5,14 +5,3 @@ ion-content {
   align-items: center;
   justify-content: center;
 }
-
-.card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  app-button {
-    position: relative;
-    top: -32px;
-  }
-}

@@ -13,7 +13,7 @@ export class UsuarioController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Usuario> {
-    return this.userService.findOne(+id);
+    return this.userService.findOne("identity");
   }
 
   @Post()
@@ -23,7 +23,7 @@ export class UsuarioController {
 
   @Put(':id')
   update(@Param('id') id: string, @Body() user: Partial<Usuario>): Promise<Usuario> {
-    return this.userService.update(+id, user);
+    return this.userService.update("identity", user);
   }
 
   @Delete(':id')

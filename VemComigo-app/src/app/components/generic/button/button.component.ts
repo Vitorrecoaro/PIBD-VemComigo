@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() text: string = 'button';
   @Input() color: string = 'primary';
+  @Input() className: string = '';  // Novo input para a classe
 
-  constructor() {}
+  constructor() { }
 }

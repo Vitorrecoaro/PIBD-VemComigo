@@ -3,8 +3,8 @@ import { Usuario } from './usuario.entity';
 
 @Entity()
 export class Comunica {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn('identity', { name: 'id' })
+    id!: string; // ???
 
     @Column('varchar', { length: 50, nullable: false, name: 'remetente'})
     IDRemetente: string;

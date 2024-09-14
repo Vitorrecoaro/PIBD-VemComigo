@@ -4,8 +4,8 @@ import { Carona } from './carona.entity';
 
 @Entity()
 export class Avalia {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn('identity', { name: 'id' })
+    id!: string; // ???
 
     @Column('varchar', { length: 50, nullable: false, name: 'caroneiro' })
     IDCaroneiro: string;

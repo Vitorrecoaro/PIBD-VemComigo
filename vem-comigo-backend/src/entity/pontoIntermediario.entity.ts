@@ -4,7 +4,7 @@ import { Carona } from './carona.entity';
 @Entity()
 export class PontoIntermediario {
     @PrimaryGeneratedColumn('identity', { name: 'id' })
-    id: number;
+    id!: string;
 
     @Column()
     IDCarona: string;

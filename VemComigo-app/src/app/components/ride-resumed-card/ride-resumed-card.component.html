@@ -1,0 +1,45 @@
+<div class="ride-resumed-container">
+  <h4 class="info-row">
+    <div class="right-info">
+      <ion-icon src="../../../assets/icons/calendar.svg" size="large"></ion-icon>
+      {{ ride.date | date: 'dd/MM/yyyy' }}
+    </div>
+
+    <div class="left-info">
+      R$ {{ ride.value }}
+      <ion-icon src="../../../assets/icons/coin.svg" size="large"></ion-icon>
+    </div>
+  </h4>
+
+  <div class="locations-container">
+    <h4 class="info-row">
+      <div class="right-info">
+        <ion-icon src="../../../assets/icons/clock.svg" size="large"></ion-icon>
+        {{ ride.initialPointTime }}
+      </div>
+
+      <div class="left-info">
+        {{ ride.initialPoint }}
+        <ion-icon src="../../../assets/icons/pin.svg" size="large"></ion-icon>
+      </div>
+    </h4>
+
+    <hr class="card-divider" />
+
+    <h4 class="info-row">
+      <div class="right-info">
+        <ion-icon src="../../../assets/icons/clock.svg" size="large"></ion-icon>
+        {{ ride.finalPointTime }}
+      </div>
+
+      <div class="left-info">
+        {{ ride.finalPoint }}
+        <ion-icon src="../../../assets/icons/pin.svg" size="large"></ion-icon>
+      </div>
+    </h4>
+  </div>
+
+  <div class="driver-container">
+    <app-user-resumed-details></app-user-resumed-details>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.card-container {
+  font-weight: bold;
+  gap: 16px;
+  padding-top: 64px;
+  padding-bottom: 48px;
+}
+
+h4 {
+  font-weight: bold;
+  margin: 0px;
+}
+
+app-button {
+  position: relative;
+  top: -32px;
+}
+
+.ride-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    position: relative;
+    bottom: -70px;
+    width: 120px;
+  }
+}

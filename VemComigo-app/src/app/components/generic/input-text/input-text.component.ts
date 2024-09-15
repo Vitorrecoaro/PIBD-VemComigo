@@ -8,8 +8,8 @@ import { Component, Input } from '@angular/core';
 export class InputTextComponent {
   @Input() iconName?: string;
   @Input() label?: string;
-  @Input() placeholder?: string
+  @Input() placeholder?: string;
+  @Input() type?: string = 'text';
 
-  constructor() { }
-
+  constructor() {}
 }

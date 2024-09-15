@@ -26,5 +26,34 @@ ion-content {
       color: var(--ion-color-app-black);
       font-weight: bold;
     }
+
+    .homeLogo {
+      width: 73vw;
+      height: 60vw;
+      margin-top: 6.75vh;
+      margin-bottom: 2vh;
+    }
+
+    .buttons-container {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    ::ng-deep .signInButton {
+      min-width: 59.7vw;
+      height: fit-content;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    ::ng-deep .signUpButton {
+      min-width: 50vw;
+      height: fit-content;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
   }
 }

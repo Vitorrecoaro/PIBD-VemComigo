@@ -8,8 +8,8 @@ import { CarResumedDetailsComponent } from '../components/car-resumed-details/ca
 import { UserCardComponent } from '../components/user-card/user-card.component';
 
 @NgModule({
-  declarations: [InputTextComponent, ButtonComponent, UserResumedDetailsComponent, CarResumedDetailsComponent, UserCardComponent],
+  declarations: [InputTextComponent, ButtonComponent],
   imports: [CommonModule, IonicModule],
-  exports: [InputTextComponent, ButtonComponent, UserResumedDetailsComponent, CarResumedDetailsComponent, UserCardComponent],
+  exports: [InputTextComponent, ButtonComponent],
 })
 export class SharedModule {}

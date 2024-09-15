@@ -108,3 +108,21 @@
 * {
   font-family: 'Montserrat', sans-serif;
 }
+
+.left-info,
+.right-info {
+  font-size: 1.15rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.info-row {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #3a404a;
+}
+

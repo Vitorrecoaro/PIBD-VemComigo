@@ -11,6 +11,8 @@ export type Ride = {
   finalPoint: string;
   finalPointTime: string;
   driver: User;
+  passengers: User[];
+  car: Car;
 };
 
 export type RideFilters = {

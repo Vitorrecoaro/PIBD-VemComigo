@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { Ride } from 'src/app/types/ride.types';
 
 @Component({
-  selector: 'app-ride-resumed',
-  templateUrl: './ride-resumed.component.html',
-  styleUrls: ['./ride-resumed.component.scss'],
+  selector: 'app-ride-card',
+  templateUrl: './ride-card.component.html',
+  styleUrls: ['./ride-card.component.scss'],
 })
-export class RideResumedComponent {
+export class RideCardComponent {
   @Input() ride: Ride = {
     date: new Date(),
     value: 40.0,
@@ -15,8 +15,13 @@ export class RideResumedComponent {
     finalPoint: 'Campinas, SP',
     finalPointTime: '8h40',
     driver: {
-      name: 'José Geraldo',
-      rating: 4.98,
+      name: 'Bellatrix Lestrange',
+      rating: 4.9,
+    },
+    passengers: [],
+    car: {
+      name: 'Kwid Branco',
+      carSign: 'ATB-3428',
     },
   };
 

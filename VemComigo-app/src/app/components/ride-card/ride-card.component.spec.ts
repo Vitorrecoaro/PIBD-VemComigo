@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { RideResumedComponent } from './ride-resumed.component';
+import { RideCardComponent } from './ride-card.component';
 
-describe('RideResumedComponent', () => {
-  let component: RideResumedComponent;
-  let fixture: ComponentFixture<RideResumedComponent>;
+describe('RideCardComponent', () => {
+  let component: RideCardComponent;
+  let fixture: ComponentFixture<RideCardComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RideResumedComponent ],
+      declarations: [ RideCardComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(RideResumedComponent);
+    fixture = TestBed.createComponent(RideCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

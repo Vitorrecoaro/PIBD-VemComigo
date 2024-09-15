@@ -5,3 +5,13 @@ ion-content {
   align-items: center;
   justify-content: center;
 }
+
+ion-content::part(scroll) {
+  padding-top: var(--ion-safe-area-top, 0);
+}
+
+.logo-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}

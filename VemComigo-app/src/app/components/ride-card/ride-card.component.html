@@ -1,0 +1,17 @@
+<div class="ride-card-container">
+  <img src="../../../assets/imgs/VemComigo-Logo.png" alt="Vem comigo logo" />
+
+  <div class="card-container">
+    <h4>Detalhes:</h4>
+    <app-ride-detailed-card [ride]="ride"> </app-ride-detailed-card>
+
+    <h4>Motorista:</h4>
+    <app-driver-card [driver]="ride.driver"></app-driver-card>
+
+    <h4>Passageiros:</h4>
+    <app-user-card *ngFor="let user of ride.passengers" [user]="user"></app-user-card>
+    <span *ngIf="ride.passengers.length === 0">Não há passageiros nessa carona</span>
+  </div>
+
+  <app-button [text]="'Vamos juntos!'" [color]="'app-yellow'"></app-button>
+</div>

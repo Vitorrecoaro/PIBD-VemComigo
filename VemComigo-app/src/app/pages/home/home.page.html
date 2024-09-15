@@ -1,16 +1,21 @@
 <ion-content [fullscreen]="true">
   <div class="main-container">
-    <h1>Bem vindo!</h1>
+    <img src="../../../assets/Logo.svg" alt="Logo" class="homeLogo">
 
     <div class="info-container">
       <p>Entre com suas credenciais</p>
 
       <div class="input-container">
-        <app-generic-input-text [placeholder]="'E-mail'"></app-generic-input-text>
-        <app-generic-input-text [placeholder]="'Senha'"></app-generic-input-text>
+        <app-generic-input-text [placeholder]="'E-mail'" [type]="'email'"></app-generic-input-text>
+        <app-generic-input-text [placeholder]="'Senha'" [type]="'password'"></app-generic-input-text>
       </div>
 
       <p class="forgot-password-text">Esqueceu a senha?</p>
+
+      <div class="buttons-container">
+        <app-button [text]="'Entrar'" [color]="'app-black'" [className]="'signInButton'"></app-button>
+        <app-button [text]="'Cadastre-se'" [color]="'app-yellow'" [className]="'signUpButton'"></app-button>
+      </div>
     </div>
   </div>
 </ion-content>

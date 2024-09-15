@@ -1,0 +1,55 @@
+<div class="card-container">
+  <h4 class="info-row">
+    <div class="right-info">
+      {{ ride.date | date: 'dd/MM/YYYY' }}
+    </div>
+    <div class="left-info">
+      <ion-icon src="../../../assets/icons/calendar.svg" size="large"></ion-icon>
+    </div>
+  </h4>
+
+  <h4 class="info-row">
+    <div class="right-info">De: {{ ride.initialPoint }}</div>
+
+    <div class="left-info">
+      <ion-icon src="../../../assets/icons/pin.svg" size="large"></ion-icon>
+    </div>
+  </h4>
+
+  <h4 class="info-row">
+    <div class="right-info">Horário saída: {{ ride.initialPointTime }}</div>
+
+    <div class="left-info">
+      <ion-icon src="../../../assets/icons/clock.svg" size="large"></ion-icon>
+    </div>
+  </h4>
+
+  <hr class="card-divider" />
+
+  <h4 class="info-row">
+    <div class="right-info">Para: {{ ride.finalPoint }}</div>
+
+    <div class="left-info">
+      <ion-icon src="../../../assets/icons/pin.svg" size="large"></ion-icon>
+    </div>
+  </h4>
+
+  <h4 class="info-row">
+    <div class="right-info">Horário chegada: {{ ride.finalPointTime }}</div>
+
+    <div class="left-info">
+      <ion-icon src="../../../assets/icons/clock.svg" size="large"></ion-icon>
+    </div>
+  </h4>
+
+  <hr class="card-divider" />
+
+  <h4 class="info-row">
+    <div class="right-info">Valor por pessoa:</div>
+
+    <div class="left-info">
+      R${{ ride.value }}
+      <ion-icon src="../../../assets/icons/coin.svg" size="large"></ion-icon>
+    </div>
+  </h4>
+</div>

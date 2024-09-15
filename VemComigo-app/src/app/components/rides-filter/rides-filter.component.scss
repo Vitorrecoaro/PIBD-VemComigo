@@ -1,0 +1,20 @@
+.ride-resumed-container {
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #858c94;
+  padding: 12px 16px;
+  align-items: center;
+  color: #09101d;
+  gap: 16px;
+}
+
+ion-icon {
+  color: #858c94;
+}
+
+.locations-container,
+.driver-container {
+  width: 100%;
+}

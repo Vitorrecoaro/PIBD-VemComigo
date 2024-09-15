@@ -4,10 +4,11 @@ import { InputTextComponent } from '../components/generic/input-text/input-text.
 import { IonicModule } from '@ionic/angular';
 import { ButtonComponent } from '../components/generic/button/button.component';
 import { UserResumedDetailsComponent } from '../components/user-resumed-details/user-resumed-details.component';
+import { CarResumedDetailsComponent } from '../components/car-resumed-details/car-resumed-details.component';
 
 @NgModule({
-  declarations: [InputTextComponent, ButtonComponent, UserResumedDetailsComponent],
+  declarations: [InputTextComponent, ButtonComponent, UserResumedDetailsComponent, CarResumedDetailsComponent],
   imports: [CommonModule, IonicModule],
-  exports: [InputTextComponent, ButtonComponent, UserResumedDetailsComponent],
+  exports: [InputTextComponent, ButtonComponent, UserResumedDetailsComponent, CarResumedDetailsComponent],
 })
 export class SharedModule {}

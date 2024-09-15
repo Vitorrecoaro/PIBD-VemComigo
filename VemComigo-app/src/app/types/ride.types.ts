@@ -18,3 +18,8 @@ export type RideFilters = {
   initialPoint: string;
   finalPoint: string;
 };
+
+export type Car = {
+  name: string;
+  carSign: string;
+};

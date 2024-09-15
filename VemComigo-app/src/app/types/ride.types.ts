@@ -1,4 +1,4 @@
-export type Driver = {
+export type User = {
   name: string;
   rating: number;
 };
@@ -10,7 +10,7 @@ export type Ride = {
   initialPointTime: string;
   finalPoint: string;
   finalPointTime: string;
-  driver: Driver;
+  driver: User;
 };
 
 export type RideFilters = {

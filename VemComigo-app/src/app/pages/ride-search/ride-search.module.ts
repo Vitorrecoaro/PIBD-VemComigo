@@ -15,6 +15,7 @@ import { CarResumedDetailsComponent } from 'src/app/components/car-resumed-detai
 import { UserCardComponent } from 'src/app/components/user-card/user-card.component';
 import { UserResumedDetailsComponent } from 'src/app/components/user-resumed-details/user-resumed-details.component';
 import { DriverCardComponent } from 'src/app/components/driver-card/driver-card.component';
+import { CarCardComponent } from 'src/app/components/car-card/car-card.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, RideSearchPageRoutingModule, SharedModule],
@@ -27,6 +28,7 @@ import { DriverCardComponent } from 'src/app/components/driver-card/driver-card.
     CarResumedDetailsComponent,
     UserCardComponent,
     DriverCardComponent,
+    CarCardComponent,
   ],
 })
 export class RideSearchPageModule {}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Ride } from 'src/app/types/ride.types';
 
 @Component({
   selector: 'app-ride-history',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./ride-history.page.scss'],
 })
 export class RideHistoryPage {
+  private _rides: Ride[] = [];
+
   constructor() {}
+
+  public get rides() {
+    return this._rides;
+  }
 }

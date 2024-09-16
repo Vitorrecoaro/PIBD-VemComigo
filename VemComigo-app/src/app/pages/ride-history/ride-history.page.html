@@ -5,7 +5,8 @@
     <ion-card class="card-container">
       <h1 class="info-row">Histórico de caronas:</h1>
 
-      <app-ride-detailed-card></app-ride-detailed-card>
+      <app-ride-detailed-card *ngFor="let ride of rides" [ride]="ride"></app-ride-detailed-card>
+      <h4 *ngIf="rides.length === 0">Você não possui caronas no seu histórico</h4>
     </ion-card>
   </div>
 </ion-content>

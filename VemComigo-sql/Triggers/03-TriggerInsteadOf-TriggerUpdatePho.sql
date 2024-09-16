@@ -13,6 +13,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER TriggerUpdatePho
-INSTEAD OF UPDATE ON UsuarioView
+INSTEAD OF UPDATE ON UserAssessmentView
 FOR EACH ROW
 EXECUTE FUNCTION update_foto_usuario();

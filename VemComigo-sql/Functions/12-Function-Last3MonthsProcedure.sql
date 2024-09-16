@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE Last3MonthsProcedure(pIDUsuario VARCHAR)
+CREATE OR REPLACE FUNCTION Last3MonthsFunction(pIDUsuario VARCHAR)
 RETURNS TABLE (
     IDCarona VARCHAR,
     DataCarona DATE,
@@ -41,3 +41,4 @@ BEGIN
         c.DataCarona DESC;
 END;
 $$ LANGUAGE plpgsql;
+

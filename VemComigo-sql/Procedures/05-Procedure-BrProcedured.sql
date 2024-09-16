@@ -9,6 +9,7 @@ CREATE OR REPLACE PROCEDURE insert_usuario_brasileiro(
     p_telefone_ddd VARCHAR(5),
     p_telefone_prefixo VARCHAR(5),
     p_telefone_numero VARCHAR(10),
+	p_senha VARCHAR(255),
     p_logradouro VARCHAR(255),
     p_numero VARCHAR(10),
     p_bairro VARCHAR(100),
@@ -16,10 +17,12 @@ CREATE OR REPLACE PROCEDURE insert_usuario_brasileiro(
     p_complemento VARCHAR(255),
     p_cpf VARCHAR(14)
 )
+LANGUAGE plpgsql
+AS $$
 BEGIN
     -- Inserir dados na tabela Usuario
-    INSERT INTO Usuario (IDUsuario, DataNascimento, Nome, Foto, Genero, Email, Nacionalidade)
-    VALUES (p_idusuario, p_datanascimento, p_nome, p_foto, p_genero, p_email, TRUE);
+    INSERT INTO Usuario (idusuario, DataNascimento, Nome, Foto, Genero, Email,Senha, Nacionalidade)
+    VALUES (p_idusuario, p_datanascimento, p_nome, p_foto, p_genero, p_email, p_senha, TRUE);
 
     -- Inserir dados na tabela Telefone
     INSERT INTO Telefone (IDUsuario, DDI, DDD, Prefixo, Numero)
@@ -34,3 +37,4 @@ BEGIN
     VALUES (p_cpf, p_idusuario);
 
 END;
+$$;

@@ -10,11 +10,9 @@ import { RideSearchPage } from './ride-search.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RideSearchCardComponent } from 'src/app/components/ride-search-card/ride-search-card.component';
 import { RidesFilterComponent } from 'src/app/components/rides-filter/rides-filter.component';
-import { CarResumedDetailsComponent } from 'src/app/components/car-resumed-details/car-resumed-details.component';
 import { UserCardComponent } from 'src/app/components/user-card/user-card.component';
 import { UserResumedDetailsComponent } from 'src/app/components/user-resumed-details/user-resumed-details.component';
 import { DriverCardComponent } from 'src/app/components/driver-card/driver-card.component';
-import { CarCardComponent } from 'src/app/components/car-card/car-card.component';
 import { RideResumedCardComponent } from 'src/app/components/ride-resumed-card/ride-resumed-card.component';
 import { RideCardComponent } from 'src/app/components/ride-card/ride-card.component';
 
@@ -26,10 +24,8 @@ import { RideCardComponent } from 'src/app/components/ride-card/ride-card.compon
     RideResumedCardComponent,
     RidesFilterComponent,
     UserResumedDetailsComponent,
-    CarResumedDetailsComponent,
     UserCardComponent,
     DriverCardComponent,
-    CarCardComponent,
     RideCardComponent,
   ],
 })

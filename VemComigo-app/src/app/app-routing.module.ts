@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'create-ride',
     loadChildren: () => import('./pages/create-ride/create-ride.module').then( m => m.CreateRidePageModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],

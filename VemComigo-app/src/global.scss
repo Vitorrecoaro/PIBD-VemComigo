@@ -151,7 +151,6 @@
   width: 73vw;
   height: 60vw;
   margin-top: var(--ion-safe-area-top);
-  margin-bottom: 2vh;
 }
 
 ion-content {
@@ -164,5 +163,15 @@ ion-content {
   --padding-bottom: 16px;
   --padding-start: 10px;
   --padding-end: 10px;
+}
+
+.ion-flex-c {
+  display: flex;
+  flex-direction: column;
+}
+
+.ion-flex-r {
+  display: flex;
+  flex-direction: row;
 }
 

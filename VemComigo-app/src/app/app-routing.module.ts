@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'rides-history',
     loadChildren: () => import('./pages/ride-history/ride-history.module').then(m => m.RideHistoryPageModule),
   },
+  {
+    path: 'create-ride',
+    loadChildren: () => import('./pages/create-ride/create-ride.module').then( m => m.CreateRidePageModule)
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],

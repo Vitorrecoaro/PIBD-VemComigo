@@ -1,0 +1,16 @@
+<ion-modal class="dialog-modal" [isOpen]="addVehicleModalService.isOpen" (didDismiss)="addVehicleModalService.closeModal()">
+  <ng-template>
+    <div class="modal-container">
+      <h1 class="info-row">Cadastro de veículos</h1>
+
+      <app-generic-input-text placeholder="XXXXXXXXXXX" label="Qual o RENAVAM do veículo?" iconName="search">
+      </app-generic-input-text>
+      <app-generic-input-text placeholder="ABC-1C34" label="Qual a placa do veículo?"> </app-generic-input-text>
+
+      <div class="modal-buttons-container">
+        <ion-button fill="clear" color="app-blue" (click)="addVehicleModalService.closeModal()">Cancelar</ion-button>
+        <ion-button fill="clear" color="app-blue">Cadastrar carro</ion-button>
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>

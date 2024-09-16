@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AddVehicleModalService } from 'src/app/services/add-vehicle-modal/add-vehicle-modal.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage {
-  constructor() {}
+  constructor(private addVehicleModalService: AddVehicleModalService) {}
+
+  public handleAddNewVehicleButton() {
+    this.addVehicleModalService.openModal();
+  }
 }

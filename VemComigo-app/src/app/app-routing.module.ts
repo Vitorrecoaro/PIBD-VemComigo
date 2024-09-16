@@ -8,7 +8,11 @@ const routes: Routes = [
   },
   {
     path: 'ride-search',
-    loadChildren: () => import('./pages/ride-search/ride-search.module').then( m => m.RideSearchPageModule)
+    loadChildren: () => import('./pages/ride-search/ride-search.module').then(m => m.RideSearchPageModule),
+  },
+  {
+    path: 'rides-history',
+    loadChildren: () => import('./pages/ride-history/ride-history.module').then(m => m.RideHistoryPageModule),
   },
 ];
 @NgModule({

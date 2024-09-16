@@ -12,12 +12,12 @@ BEGIN
 	END IF;
 
 	IF EXISTS (SELECT 1 FROM usuario WHERE email = NEW.Email) THEN
-		RAIZE EXCEPTION 'E-mail já cadastrado!';
+		RAIsE EXCEPTION 'E-mail já cadastrado!';
 	END IF;
 
 	RETURN NEW;
 END;
-$$ LANGUAGE plqgsql;
+$$ LANGUAGE plpgsql;
 
 CREATE TRIGGER trg_validate_email
 BEFORE INSERT OR UPDATE ON usuario

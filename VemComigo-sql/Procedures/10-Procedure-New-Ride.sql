@@ -1,11 +1,10 @@
 CREATE OR REPLACE PROCEDURE NewRideProcedure(
-    p_idusuario VARCHAR(50),
     p_datanascimento DATE,
     p_nome VARCHAR(50),
     p_foto BYTEA,
     p_genero VARCHAR(30),
     p_email VARCHAR(255),
-    p_nacionalidade BOOLEAN,CREATE OR REPLACE PROCEDURE cadastrar_carona(
+    p_nacionalidade BOOLEAN,
     p_idcarona VARCHAR(50),
     p_datacarona DATE,
     p_horainicio TIME,

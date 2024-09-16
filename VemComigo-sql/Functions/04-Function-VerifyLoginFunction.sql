@@ -3,12 +3,16 @@ CREATE OR REPLACE FUNCTION VerifyLoginFunction(
     p_Senha VARCHAR(255)
 )
 RETURNS BOOLEAN
-AS
-'SELECT EXISTS(
-    SELECT 1
-    FROM Usuario
-    WHERE Email = p_Email AND Senha = p_Senha
-)';
+AS $$
+BEGIN
+    RETURN EXISTS (
+        SELECT 1
+        FROM Usuario
+        WHERE Email = p_Email AND Senha = p_Senha
+    );
+END;
+$$ LANGUAGE plpgsql;
+
 
 -- Usuários exemplos
 INSERT INTO Usuario (IDUsuario, DataNascimento, Nome, Foto, Genero, Email, Senha, Nacionalidade)

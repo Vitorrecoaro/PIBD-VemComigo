@@ -1,0 +1,3 @@
+ALTER TABLE
+  comunica
+ADD COLUMN TimeStampUltimaEdicao VARCHAR(24) NOT NULL;

@@ -67,6 +67,7 @@
   --ion-color-app-light-blue-contrast-rgb: 0, 0, 0;
   --ion-color-app-light-blue-shade: #00a4b8;
   --ion-color-app-light-blue-tint: #1ac1d6;
+  --ion-safe-area-top: env(safe-area-inset-top, 2rem);
 }
 
 .ion-color-app-yellow {
@@ -140,5 +141,28 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin: 0px;
+  width: 100%;
+}
+
+.logo-img {
+  max-width: 300px;
+  max-height: 300px;
+  width: 73vw;
+  height: 60vw;
+  margin-top: var(--ion-safe-area-top);
+  margin-bottom: 2vh;
+}
+
+ion-content {
+  --background: var(--ion-color-app-light-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  --padding-start: 10px;
+  --padding-end: 10px;
 }
 

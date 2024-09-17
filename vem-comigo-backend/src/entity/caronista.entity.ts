@@ -13,6 +13,6 @@ export class Caronista extends Usuario {
 	@Column('float', { nullable: false, name: 'nota_media' })
 	nota_media!: number;
 
-	// @OneToMany(() => Veiculo, veiculo => veiculo.caronista)
-	// veiculos!: Veiculo[];
+	@Column('varchar', { nullable: false, name: 'validade_cnh' })
+	validade_cnh!: string;
 }

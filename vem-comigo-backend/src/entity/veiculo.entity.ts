@@ -25,12 +25,6 @@ export class Veiculo {
   @Column('int', { nullable: false, name: 'ano' })
 	ano!: number;   
 
-	// @ManyToOne(() => Caronista, caronista => caronista.veiculos)
-	// caronista!: Caronista;
-
-	// @Column('varchar', { nullable: false, length: 50, name: 'relacao_com_caronista' })
-	// relacao_com_caronista!: string;
-
   @OneToOne(() => Carona, carona => carona.veiculo)
   carona!: Carona;
 }

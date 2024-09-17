@@ -39,6 +39,12 @@ export class PontoIntermediario {
     @Column({ select: false })
     IDPonto: string;
 
+    @Column('varchar', { nullable: false, length: 50, name: 'logradouro' })
+    logradouro: string;
+
+    @Column('int', { nullable: false, name: 'tipo' })
+    tipo: number
+
     @ManyToOne(() => Carona, carona => carona.pontosIntermediarios, { onDelete: 'CASCADE' })
     carona: Carona;
 }

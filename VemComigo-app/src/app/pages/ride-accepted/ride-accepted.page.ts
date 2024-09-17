@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ride-accepted',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./ride-accepted.page.scss'],
 })
 export class RideAcceptedPage {
-  constructor() {}
+  constructor(private router: Router) {}
+
+  public async onButtonClick() {
+    await this.router.navigate(['rides-history'], { replaceUrl: true });
+  }
 }

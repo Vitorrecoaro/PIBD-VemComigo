@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'sign-up',
     loadChildren: () => import('./pages/sign-up/sign-up.module').then( m => m.SignUpPageModule)
   },
+  {
+    path: 'ride-accepted',
+    loadChildren: () => import('./pages/ride-accepted/ride-accepted.module').then( m => m.RideAcceptedPageModule)
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  private readonly PAGES_WITHOUT_NAV_BAR = ['/', '/sign-up', '/ride-search/ride-accepted'];
+  private readonly PAGES_WITHOUT_NAV_BAR = ['/', '/sign-up', '/ride-accepted'];
 
   constructor(private router: Router) {}
 

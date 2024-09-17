@@ -9,10 +9,6 @@ const routes: Routes = [
     component: RideSearchPage,
   },
   {
-    path: 'ride-accepted',
-    loadChildren: () => import('./ride-accepted/ride-accepted.module').then(m => m.RideAcceptedPageModule),
-  },
-  {
     path: 'ride-search-results',
     loadChildren: () => import('./ride-search-results/ride-search-results.module').then(m => m.RideSearchResultsPageModule),
   },

@@ -30,7 +30,7 @@ export class RideCardComponent {
 
   public async onButtonClick() {
     try {
-      await this.router.navigate(['ride-search', 'ride-accepted'], { replaceUrl: true });
+      await this.router.navigate(['ride-accepted'], { replaceUrl: true });
     } catch (error) {
       console.error(error);
     }

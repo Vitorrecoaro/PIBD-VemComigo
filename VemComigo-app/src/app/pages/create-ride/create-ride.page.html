@@ -3,17 +3,26 @@
     <img src="../../../assets/imgs/Logo.svg" alt="Vem comigo logo" class="logo-img" />
 
     <ion-card class="card-container">
-      <app-generic-input-text placeholder="São Carlos, SP" label="Ponto de origem" iconName="search"> </app-generic-input-text>
-      <app-generic-input-text placeholder="Campinas, SP" label="Ponto de destino" iconName="search"> </app-generic-input-text>
-      <app-generic-input-text placeholder="1" label="Quantos lugares disponíveis" type="number"> </app-generic-input-text>
-      <app-generic-input-text placeholder="1 mala grande" label="Espaço para malas por pessoa"> </app-generic-input-text>
-      <app-generic-input-text placeholder="12/08/2024" label="Quando pretende ir?" type="date"> </app-generic-input-text>
-      <app-generic-input-text placeholder="Sem preferências" label="Preferências"> </app-generic-input-text>
-      <app-generic-input-text placeholder="21:00" label="Horário de início" type="time"> </app-generic-input-text>
-      <app-generic-input-text placeholder="Kwid preto, placa ATB-3428" label="Veículo a ser utilizado"> </app-generic-input-text>
-      <app-generic-input-text placeholder="R$ 30,50" label="Preço" type="number"> </app-generic-input-text>
+      <app-generic-input-text placeholder="São Carlos, SP" label="Ponto de origem" iconName="search"
+        [(inputValue)]="origin"> </app-generic-input-text>
+      <app-generic-input-text placeholder="Campinas, SP" label="Ponto de destino" iconName="search"
+        [(inputValue)]="destiny"> </app-generic-input-text>
+      <app-generic-input-text placeholder="1" label="Quantos lugares disponíveis" type="number"
+        [(inputValue)]="qtdSeats"> </app-generic-input-text>
+      <app-generic-input-text placeholder="1 mala grande" label="Espaço para malas por pessoa" [(inputValue)]="bagage">
+      </app-generic-input-text>
+      <app-generic-input-text placeholder="12/08/2024" label="Quando pretende ir?" type="date" [(inputValue)]="when">
+      </app-generic-input-text>
+      <app-generic-input-text placeholder="Sem preferências" label="Preferências" [(inputValue)]="preference">
+      </app-generic-input-text>
+      <app-generic-input-text placeholder="21:00" label="Horário de início" type="time" [(inputValue)]="startTime">
+      </app-generic-input-text>
+      <app-generic-input-text placeholder="Kwid preto, placa ATB-3428" label="Veículo a ser utilizado"
+        [(inputValue)]="veicle"> </app-generic-input-text>
+      <app-generic-input-text placeholder="R$ 30,50" label="Preço" type="number" [(inputValue)]="price">
+      </app-generic-input-text>
     </ion-card>
 
-    <app-button text="Vem comigo!" color="app-yellow"></app-button>
+    <app-button text="Vem comigo!" color="app-yellow" (buttonClick)="CreateRide()"></app-button>
   </div>
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-generic-input-text',
@@ -9,7 +9,15 @@ export class InputTextComponent {
   @Input() iconName?: string;
   @Input() label?: string;
   @Input() placeholder?: string;
-  @Input() type?: string = 'text';
+  @Input() type: string = 'text';
+  @Input() inputValue?: string;
 
-  constructor() {}
+  @Output() inputValueChange = new EventEmitter<string>();
+
+  constructor() { }
+
+  onValueChange(event: any) {
+    this.inputValue = event.detail.value; // Atualiza o valor internamente
+    this.inputValueChange.emit(this.inputValue); // Emite o valor para o componente pai
+  }
 }

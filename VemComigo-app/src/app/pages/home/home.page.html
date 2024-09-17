@@ -6,14 +6,17 @@
       <p>Entre com suas credenciais</p>
 
       <div class="input-container">
-        <app-generic-input-text [placeholder]="'E-mail'" [type]="'email'"></app-generic-input-text>
-        <app-generic-input-text [placeholder]="'Senha'" [type]="'password'"></app-generic-input-text>
+        <app-generic-input-text [placeholder]="'E-mail'" [type]="'email'"
+          [(inputValue)]="email"></app-generic-input-text>
+        <app-generic-input-text [placeholder]="'Senha'" [type]="'password'"
+          [(inputValue)]="password"></app-generic-input-text>
       </div>
 
       <p class="forgot-password-text">Esqueceu a senha?</p>
 
       <div class="buttons-container">
-        <app-button [text]="'Entrar'" [color]="'app-black'" [className]="'signInButton'"></app-button>
+        <app-button [text]="'Entrar'" [color]="'app-black'" [className]="'signInButton'"
+          (buttonClick)="Login()"></app-button>
         <app-button [text]="'Cadastre-se'" [color]="'app-yellow'" [className]="'signUpButton'"></app-button>
       </div>
     </div>

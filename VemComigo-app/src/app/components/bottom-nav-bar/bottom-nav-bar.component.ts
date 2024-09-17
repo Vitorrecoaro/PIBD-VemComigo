@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonTabs } from '@ionic/angular';
-import { RouterService } from 'src/app/services/router/router.service';
+//import { RouterService } from 'src/app/services/router/router.service';
 
 @Component({
   selector: 'app-bottom-nav-bar',
@@ -10,7 +10,7 @@ import { RouterService } from 'src/app/services/router/router.service';
 export class BottomNavBarComponent {
   @ViewChild('tabs') tabsComponent: IonTabs | null = null;
 
-  constructor() {}
+  constructor() { }
 
   public getIconName(iconName: string, tabName: string) {
     const currentTab = this.getCurrentTab();

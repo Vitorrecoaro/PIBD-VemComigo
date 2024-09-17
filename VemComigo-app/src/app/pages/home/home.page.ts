@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  constructor() {}
+  email: string = '';
+  password: string = '';
+
+  constructor() { }
+
+  Login() {
+    console.log('Email:', this.email);
+    console.log('Senha:', this.password);
+    // Logica de autenticação...
+  }
 }

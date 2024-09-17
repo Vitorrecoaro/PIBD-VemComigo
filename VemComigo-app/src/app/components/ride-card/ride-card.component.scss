@@ -20,10 +20,13 @@ app-button {
   flex-direction: column;
   align-items: center;
   margin: 0;
+  top: -100px;
+  position: relative;
 
   img {
     position: relative;
     bottom: -70px;
     width: 120px;
+    z-index: 1;
   }
 }

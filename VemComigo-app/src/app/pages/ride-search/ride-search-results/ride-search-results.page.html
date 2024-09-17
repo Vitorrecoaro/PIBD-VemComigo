@@ -4,13 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [appHideHeader]="header" [fullscreen]="true">
+<ion-content [appHideHeader]="header" [fullscreen]="true" scrollEvents="true">
   <div class="ion-flex-c ion-align-items-center">
     <img src="../../../../assets/imgs/Logo.svg" alt="Vem comigo logo" class="logo-img" />
 
     <ion-card class="card-container">
       <app-rides-filter></app-rides-filter>
-      <app-ride-resumed-card></app-ride-resumed-card>
+      <app-ride-resumed-card (click)="onClickRide()"></app-ride-resumed-card>
     </ion-card>
   </div>
 </ion-content>

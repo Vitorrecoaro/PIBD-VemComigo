@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +10,13 @@ export class HomePage {
   email: string = '';
   password: string = '';
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  Login() {
+  public async Login() {
     console.log('Email:', this.email);
     console.log('Senha:', this.password);
     // Logica de autenticação...
+
+    await this.router.navigate(['ride-search']);
   }
 }

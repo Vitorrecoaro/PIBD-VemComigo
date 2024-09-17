@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-flex-c ion-align-items-center">
+    <img src="../../../assets/imgs/Logo.svg" alt="Vem comigo logo" class="logo-img" />
+
+    <ion-card class="card-container">
+      <h1>Cadastro</h1>
+      <app-generic-input-text placeholder="José" label="Nome:"></app-generic-input-text>
+      <app-generic-input-text placeholder="da Silva" label="Sobrenome:"></app-generic-input-text>
+      <app-generic-input-text placeholder="josesilva@email.com" label="Email:" type="email"></app-generic-input-text>
+      <app-generic-input-text placeholder="Senha" label="Senha:" type="password"></app-generic-input-text>
+      <app-generic-input-text placeholder="Confirme a senha" label="Confirmar senha:" type="password"></app-generic-input-text>
+
+      <hr class="card-divider" />
+
+      <app-generic-input-text label="Nacionalidade" placeholder="Brasileiro"></app-generic-input-text>
+      <app-generic-input-text label="Documento" placeholder="CPF ou Passaporte"></app-generic-input-text>
+
+      <hr class="card-divider" />
+
+      <app-generic-input-text
+        label="Endereço"
+        placeholder="Rua das Acácias, Jardim Primavera - São Carlos, SP"></app-generic-input-text>
+      <app-generic-input-text label="Complemento" placeholder="Apto 302"></app-generic-input-text>
+      <app-generic-input-text label="CEP" placeholder="10322-402"></app-generic-input-text>
+      <app-generic-input-text label="Número" placeholder="32"></app-generic-input-text>
+    </ion-card>
+
+    <app-button color="app-black" text="Cadastrar!"></app-button>
+  </div>
+</ion-content>

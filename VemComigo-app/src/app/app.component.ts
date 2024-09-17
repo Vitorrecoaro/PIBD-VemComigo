@@ -13,7 +13,6 @@ export class AppComponent {
 
   public canShowNavBar() {
     const currentUrl = this.router.url;
-    console.log(currentUrl);
 
     return !this.PAGES_WITHOUT_NAV_BAR.includes(currentUrl);
   }

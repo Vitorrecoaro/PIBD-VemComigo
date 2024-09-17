@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: RideSearchPage
+  },  {
+    path: 'ride-search-results',
+    loadChildren: () => import('./ride-search-results/ride-search-results.module').then( m => m.RideSearchResultsPageModule)
   }
+
 ];
 
 @NgModule({

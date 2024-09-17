@@ -200,3 +200,9 @@ ion-content {
   justify-content: flex-end;
 }
 
+.transparent-toolbar {
+  box-shadow: none;
+  --webkit-box-shadow: none;
+  --background: transparent;
+}
+

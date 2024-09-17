@@ -8,6 +8,7 @@ import { RideDetailedCardComponent } from '../components/ride-detailed-card/ride
 import { CarCardComponent } from '../components/car-card/car-card.component';
 import { CarResumedDetailsComponent } from '../components/car-resumed-details/car-resumed-details.component';
 import { AddVehicleModalComponent } from '../components/modals/add-vehicle-modal/add-vehicle-modal.component';
+import { UserResumedDetailsComponent } from '../components/user-resumed-details/user-resumed-details.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AddVehicleModalComponent } from '../components/modals/add-vehicle-modal
     CarCardComponent,
     CarResumedDetailsComponent,
     AddVehicleModalComponent,
+    UserResumedDetailsComponent,
   ],
   imports: [CommonModule, IonicModule, FormsModule],
   exports: [
@@ -26,6 +28,7 @@ import { AddVehicleModalComponent } from '../components/modals/add-vehicle-modal
     CarCardComponent,
     CarResumedDetailsComponent,
     AddVehicleModalComponent,
+    UserResumedDetailsComponent,
   ],
 })
-export class SharedModule { }
+export class SharedModule {}

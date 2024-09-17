@@ -1,0 +1,16 @@
+<ion-header class="transparent-toolbar" #header>
+  <ion-toolbar class="transparent-toolbar">
+    <ion-back-button slot="start" defaultHref="/ride-search"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [appHideHeader]="header" [fullscreen]="true">
+  <div class="ion-flex-c ion-align-items-center">
+    <img src="../../../../assets/imgs/Logo.svg" alt="Vem comigo logo" class="logo-img" />
+
+    <ion-card class="card-container">
+      <app-rides-filter></app-rides-filter>
+      <app-ride-resumed-card></app-ride-resumed-card>
+    </ion-card>
+  </div>
+</ion-content>

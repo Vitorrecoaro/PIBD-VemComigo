@@ -12,27 +12,33 @@
 
     <ion-card class="card-container">
       <h1>Cadastro</h1>
-      <app-generic-input-text placeholder="José" label="Nome:"></app-generic-input-text>
-      <app-generic-input-text placeholder="da Silva" label="Sobrenome:"></app-generic-input-text>
-      <app-generic-input-text placeholder="josesilva@email.com" label="Email:" type="email"></app-generic-input-text>
-      <app-generic-input-text placeholder="Senha" label="Senha:" type="password"></app-generic-input-text>
-      <app-generic-input-text placeholder="Confirme a senha" label="Confirmar senha:" type="password"></app-generic-input-text>
+      <app-generic-input-text placeholder="José" label="Nome:" [(inputValue)]="name"></app-generic-input-text>
+      <app-generic-input-text placeholder="da Silva" label="Sobrenome:"
+        [(inputValue)]="surname"></app-generic-input-text>
+      <app-generic-input-text placeholder="josesilva@email.com" label="Email:" type="email"
+        [(inputValue)]="email"></app-generic-input-text>
+      <app-generic-input-text placeholder="Senha" label="Senha:" type="password"
+        [(inputValue)]="password"></app-generic-input-text>
+      <app-generic-input-text placeholder="Confirme a senha" label="Confirmar senha:" type="password"
+        [(inputValue)]="passwordConfirmation"></app-generic-input-text>
 
       <hr class="card-divider" />
 
-      <app-generic-input-text label="Nacionalidade" placeholder="Brasileiro"></app-generic-input-text>
-      <app-generic-input-text label="Documento" placeholder="CPF ou Passaporte"></app-generic-input-text>
+      <app-generic-input-text label="Nacionalidade" placeholder="Brasileiro"
+        [(inputValue)]="nationality"></app-generic-input-text>
+      <app-generic-input-text label="Documento" placeholder="CPF ou Passaporte"
+        [(inputValue)]="document"></app-generic-input-text>
 
       <hr class="card-divider" />
 
-      <app-generic-input-text
-        label="Endereço"
-        placeholder="Rua das Acácias, Jardim Primavera - São Carlos, SP"></app-generic-input-text>
-      <app-generic-input-text label="Complemento" placeholder="Apto 302"></app-generic-input-text>
-      <app-generic-input-text label="CEP" placeholder="10322-402"></app-generic-input-text>
-      <app-generic-input-text label="Número" placeholder="32"></app-generic-input-text>
+      <app-generic-input-text label="Endereço" placeholder="Rua das Acácias, Jardim Primavera - São Carlos, SP"
+        [(inputValue)]="address"></app-generic-input-text>
+      <app-generic-input-text label="Complemento" placeholder="Apto 302"
+        [(inputValue)]="complement"></app-generic-input-text>
+      <app-generic-input-text label="CEP" placeholder="10322-402" [(inputValue)]="cep"></app-generic-input-text>
+      <app-generic-input-text label="Número" placeholder="32" [(inputValue)]="number"></app-generic-input-text>
     </ion-card>
 
-    <app-button color="app-black" text="Cadastrar!"></app-button>
+    <app-button color="app-black" text="Cadastrar!" (buttonClick)="SignUp()"></app-button>
   </div>
 </ion-content>

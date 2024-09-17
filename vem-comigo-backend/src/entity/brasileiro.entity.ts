@@ -1,8 +1,8 @@
-import { Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryColumn } from 'typeorm';
 import { Usuario } from './usuario.entity';
 
 @Entity('Brasileiro')
 export class Brasileiro extends Usuario {
-  @PrimaryGeneratedColumn('identity', { name: 'cpf' })	
+  @PrimaryColumn({ type: 'varchar', length: 11 })	
 	cpf!: string;
 }

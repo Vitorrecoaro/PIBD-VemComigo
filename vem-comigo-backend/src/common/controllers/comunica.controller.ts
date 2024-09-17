@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { ComunicaService } from '../services/comunica.service';
 import { Comunica } from '../../entity/comunica.entity';
 
-@Controller('comunicas')
+@Controller('comunica')
 export class ComunicaController {
   constructor(private readonly comunicaService: ComunicaService) {}
 

@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { AvaliaService } from '../services/avalia.service';
 import { Avalia } from '../../entity/avalia.entity';
 
-@Controller('avalias')
+@Controller('avalia')
 export class AvaliaController {
   constructor(private readonly avaliaService: AvaliaService) {}
 

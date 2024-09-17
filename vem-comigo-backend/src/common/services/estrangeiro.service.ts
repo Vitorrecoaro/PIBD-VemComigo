@@ -27,7 +27,7 @@ export class EstrangeiroService {
     return this.estrangeiroRepository.findOneBy({ id });
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(id: string): Promise<void> {
     await this.estrangeiroRepository.delete(id);
   }
 }

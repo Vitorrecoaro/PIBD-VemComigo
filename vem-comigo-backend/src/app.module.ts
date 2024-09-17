@@ -25,8 +25,8 @@ import { VeiculoModule } from './common/modules/veiculo.module';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'postgres',
-      password: 'cachorro',
+      username: 'admin',
+      password: 'admin',
       database: 'vemcomigodb',
       autoLoadEntities: true, // Carrega automaticamente todas as entidades
       synchronize: false, // Usar apenas em desenvolvimento. Em produção, use migrações.

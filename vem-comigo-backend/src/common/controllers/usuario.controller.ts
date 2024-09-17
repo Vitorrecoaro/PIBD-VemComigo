@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { UsuarioService } from '../services/usuario.service';
 import { Usuario } from '../../entity/usuario.entity';
 
-@Controller('usuarios')
+@Controller('usuario')
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
@@ -37,6 +37,6 @@ export class UsuarioController {
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.usuarioService.remove(+id);
+    return this.usuarioService.remove(id);
   }
 }

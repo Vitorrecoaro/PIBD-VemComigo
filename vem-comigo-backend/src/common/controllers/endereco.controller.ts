@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { EnderecoService } from '../services/endereco.service';
 import { Endereco } from '../../entity/endereco.entity';
 
-@Controller('enderecos')
+@Controller('endereco')
 export class EnderecoController {
   constructor(private readonly enderecoService: EnderecoService) {}
 

@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { CaronaService } from '../services/carona.service';
 import { Carona } from '../../entity/carona.entity';
 
-@Controller('caronas')
+@Controller('carona')
 export class CaronaController {
   constructor(private readonly caronaService: CaronaService) {}
 

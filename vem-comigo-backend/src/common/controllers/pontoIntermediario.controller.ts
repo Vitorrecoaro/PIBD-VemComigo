@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { PontoIntermediarioService } from '../services/pontoIntermediario.service';
 import { PontoIntermediario } from '../../entity/pontoIntermediario.entity';
 
-@Controller('pontoIntermediarios')
+@Controller('pontoIntermediario')
 export class PontoIntermediarioController {
   constructor(private readonly pontoIntermediarioService: PontoIntermediarioService) {}
 

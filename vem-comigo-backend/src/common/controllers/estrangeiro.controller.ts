@@ -37,6 +37,6 @@ export class EstrangeiroController {
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.estrangeiroService.remove(+id);
+    return this.estrangeiroService.remove(id);
   }
 }

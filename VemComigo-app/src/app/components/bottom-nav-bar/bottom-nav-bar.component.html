@@ -1,11 +1,11 @@
 <ion-tabs #tabs>
-  <ion-fab vertical="bottom" horizontal="center">
+  <ion-fab *ngIf="canShowNavBar()" vertical="bottom" horizontal="center">
     <ion-fab-button color="app-yellow" routerLink="ride-search">
       <ion-icon name="search" color="app-black"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <ion-tab-bar slot="bottom" color="app-black">
+  <ion-tab-bar *ngIf="canShowNavBar()" slot="bottom" color="app-black">
     <ion-tab-button tab="messages">
       <ion-icon [name]="getIconName('chatbubbles', 'messages')" color="app-yellow"></ion-icon>
     </ion-tab-button>

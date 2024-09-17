@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +6,6 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  private readonly PAGES_WITHOUT_NAV_BAR = ['/', '/sign-up', '/ride-accepted'];
-
-  constructor(private router: Router) {}
-
-  public canShowNavBar() {
-    const currentUrl = this.router.url;
-
-    return !this.PAGES_WITHOUT_NAV_BAR.includes(currentUrl);
-  }
+  constructor() {}
 }
 

@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonTabs } from '@ionic/angular';
 
 @Component({
@@ -8,8 +9,9 @@ import { IonTabs } from '@ionic/angular';
 })
 export class BottomNavBarComponent {
   @ViewChild('tabs') tabsComponent: IonTabs | null = null;
+  private readonly PAGES_WITHOUT_NAV_BAR = ['/', '/sign-up', '/ride-accepted'];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   public getIconName(iconName: string, tabName: string) {
     const currentTab = this.getCurrentTab();
@@ -23,5 +25,13 @@ export class BottomNavBarComponent {
     if (this.tabsComponent === null) return '';
 
     return this.tabsComponent.getSelected();
+  }
+
+  public canShowNavBar() {
+    const currentUrl = this.router.url;
+
+    console.log(!this.PAGES_WITHOUT_NAV_BAR.includes(currentUrl));
+
+    return !this.PAGES_WITHOUT_NAV_BAR.includes(currentUrl);
   }
 }

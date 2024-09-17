@@ -10,6 +10,7 @@ export class UsuarioController {
   async findAll() {
     try {
       const data = await this.userService.findAll();
+      console.log('Dados retornados pelo banco:', data);
       return {
         success: true,
         data,

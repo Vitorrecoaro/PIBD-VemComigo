@@ -11,8 +11,8 @@ import { Usuario, Brasileiro, Estrangeiro, Caronista, Caroneiro, Telefone, Ender
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'mymm',
-      password: 'Postgres802097',
+      username: 'admin',
+      password: 'admin',
       database: 'vemcomigodb',
       autoLoadEntities: true,
       synchronize: true, // Defina como 'true' para sincronizar automaticamente o schema.

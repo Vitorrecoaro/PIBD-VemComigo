@@ -7,8 +7,16 @@ export class UsuarioController {
   constructor(private readonly userService: UsuarioService) {}
 
   @Get()
-  findAll(): Promise<Usuario[]> {
-    return this.userService.findAll();
+  async findAll() {
+    try {
+      const data = await this.userService.findAll();
+      return {
+        success: true,
+        data,
+      };
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   @Get(':id')

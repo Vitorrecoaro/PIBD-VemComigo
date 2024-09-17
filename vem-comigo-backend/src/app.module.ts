@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserModule } from './common/modules/usuario.module';
+import { Usuario, Brasileiro, Estrangeiro, Caronista, Caroneiro, Telefone, Endereco, Veiculo, Carona, PontoIntermediario, Comunica, Avalia, Solicitacao   } from './entity/index'
 
 @Module({
   imports: [
@@ -13,8 +15,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: 'Postgres802097',
       database: 'vemcomigodb',
       autoLoadEntities: true,
-      synchronize: false, // Defina como 'true' para sincronizar automaticamente o schema.
+      synchronize: true, // Defina como 'true' para sincronizar automaticamente o schema.
+      entities: [__dirname + 'dist/**/*.entity{.ts,.js}'],
     }),
+    TypeOrmModule.forFeature([Usuario, Brasileiro, Estrangeiro, Caronista, Caroneiro, Telefone, Endereco, Veiculo, Carona, PontoIntermediario, Comunica, Avalia, Solicitacao]),
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

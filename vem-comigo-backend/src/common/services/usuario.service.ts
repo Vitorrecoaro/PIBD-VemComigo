@@ -10,8 +10,8 @@ export class UsuarioService {
     private userRepository: Repository<Usuario>,
   ) {}
 
-  findAll(): Promise<Usuario[]> {
-    return this.userRepository.find();
+  async findAll(): Promise<Usuario[]> {
+    return await this.userRepository.find();
   }
 
   findOne(id: 'identity'): Promise<Usuario> {

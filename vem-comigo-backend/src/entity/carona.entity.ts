@@ -28,7 +28,7 @@ export class Carona {
 	@Column('int', { nullable: false, name: 'qtd_vagas' })
 	qtd_vagas!: number;
 
-	@Column('double', { nullable: false, name: 'preco' })
+	@Column('float', { nullable: false, name: 'preco' })
 	preco!: number;
 
 	@Column('boolean', { nullable: false, name: 'pet' })

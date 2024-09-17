@@ -25,7 +25,7 @@ export class Avalia {
     @Column('varchar', { length: 255, nullable: false, name: 'descricao' })
     Descricao: string;
 
-    @Column('double', { nullable: false, name: 'nota' })
+    @Column('float', { nullable: false, name: 'nota' })
     Nota: number;
 
     @Column('varchar', { nullable: false, name: 'IDAvalia' })

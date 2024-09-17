@@ -10,6 +10,10 @@
 }
 
 ion-content {
-  top: -25vw;
   --offset-top: 0;
+}
+
+.main-container {
+  position: relative;
+  top: -12.5vw;
 }

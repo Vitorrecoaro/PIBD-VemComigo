@@ -13,5 +13,5 @@
     <span *ngIf="ride.passengers.length === 0">Não há passageiros nessa carona</span>
   </ion-card>
 
-  <app-button [text]="'Vamos juntos!'" [color]="'app-yellow'"></app-button>
+  <app-button [text]="'Vamos juntos!'" [color]="'app-yellow'" (buttonClick)="onButtonClick()"></app-button>
 </div>

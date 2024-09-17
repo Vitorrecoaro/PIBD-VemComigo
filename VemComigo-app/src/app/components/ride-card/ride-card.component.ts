@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Ride } from 'src/app/types/ride.types';
 
 @Component({
@@ -25,5 +26,13 @@ export class RideCardComponent {
     },
   };
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  public async onButtonClick() {
+    try {
+      await this.router.navigate(['ride-search', 'ride-accepted'], { replaceUrl: true });
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }

@@ -13,7 +13,7 @@ export class PontoIntermediarioController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<PontoIntermediario> {
-    return this.pontoIntermediarioService.findOne("identity");
+    return this.pontoIntermediarioService.findOne(id);
   }
 
   @Post()
@@ -23,11 +23,11 @@ export class PontoIntermediarioController {
 
   @Put(':id')
   update(@Param('id') id: string, @Body() pontoIntermediario: Partial<PontoIntermediario>): Promise<PontoIntermediario> {
-    return this.pontoIntermediarioService.update("identity", pontoIntermediario);
+    return this.pontoIntermediarioService.update(id, pontoIntermediario);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.pontoIntermediarioService.remove(+id);
+    return this.pontoIntermediarioService.remove(id);
   }
 }

@@ -13,6 +13,6 @@ export class Caronista extends Usuario {
 	@Column('float', { nullable: false, name: 'nota_media' })
 	nota_media!: number;
 
-	@OneToMany(() => Veiculo, veiculo => veiculo.caronista)
-	veiculos!: Veiculo[];
+	// @OneToMany(() => Veiculo, veiculo => veiculo.caronista)
+	// veiculos!: Veiculo[];
 }

@@ -14,7 +14,7 @@ export class VeiculoService {
     return this.veiculoRepository.find();
   }
 
-  findOne(renavam: 'identity'): Promise<Veiculo> {
+  findOne(renavam: string): Promise<Veiculo> {
     return this.veiculoRepository.findOneBy({ renavam });
   }
 
@@ -22,12 +22,12 @@ export class VeiculoService {
     return this.veiculoRepository.save(veiculo);
   }
 
-  async update(renavam: 'identity', veiculo: Partial<Veiculo>): Promise<Veiculo> {
+  async update(renavam: string, veiculo: Partial<Veiculo>): Promise<Veiculo> {
     await this.veiculoRepository.update(renavam, veiculo);
     return this.veiculoRepository.findOneBy({ renavam });
   }
 
-  async remove(renavam: number): Promise<void> {
+  async remove(renavam: string): Promise<void> {
     await this.veiculoRepository.delete(renavam);
   }
 }

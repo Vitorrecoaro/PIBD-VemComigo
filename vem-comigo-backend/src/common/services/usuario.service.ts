@@ -7,27 +7,27 @@ import { Usuario } from '../../entity/usuario.entity';
 export class UsuarioService {
   constructor(
     @InjectRepository(Usuario)
-    private userRepository: Repository<Usuario>,
+    private usuarioRepository: Repository<Usuario>,
   ) {}
 
   async findAll(): Promise<Usuario[]> {
-    return await this.userRepository.find();
+    return await this.usuarioRepository.find();
   }
 
-  findOne(id: 'identity'): Promise<Usuario> {
-    return this.userRepository.findOneBy({ id });
+  findOne(id: string): Promise<Usuario> {
+    return this.usuarioRepository.findOneBy({ id });
   }
 
   create(user: Usuario): Promise<Usuario> {
-    return this.userRepository.save(user);
+    return this.usuarioRepository.save(user);
   }
 
-  async update(id: 'identity', user: Partial<Usuario>): Promise<Usuario> {
-    await this.userRepository.update(id, user);
-    return this.userRepository.findOneBy({ id });
+  async update(id: string, user: Partial<Usuario>): Promise<Usuario> {
+    await this.usuarioRepository.update(id, user);
+    return this.usuarioRepository.findOneBy({ id });
   }
 
   async remove(id: number): Promise<void> {
-    await this.userRepository.delete(id);
+    await this.usuarioRepository.delete(id);
   }
 }

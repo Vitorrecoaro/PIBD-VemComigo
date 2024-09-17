@@ -13,7 +13,7 @@ export class TelefoneController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Telefone> {
-    return this.telefoneService.findOne("identity");
+    return this.telefoneService.findOne(id);
   }
 
   @Post()
@@ -23,11 +23,11 @@ export class TelefoneController {
 
   @Put(':id')
   update(@Param('id') id: string, @Body() telefone: Partial<Telefone>): Promise<Telefone> {
-    return this.telefoneService.update("identity", telefone);
+    return this.telefoneService.update(id, telefone);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.telefoneService.remove(+id);
+    return this.telefoneService.remove(id);
   }
 }

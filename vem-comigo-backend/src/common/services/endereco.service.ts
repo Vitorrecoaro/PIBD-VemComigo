@@ -14,7 +14,7 @@ export class EnderecoService {
     return this.enderecoRepository.find();
   }
 
-  findOne(id: 'identity'): Promise<Endereco> {
+  findOne(id: string): Promise<Endereco> {
     return this.enderecoRepository.findOneBy({ id });
   }
 
@@ -22,12 +22,12 @@ export class EnderecoService {
     return this.enderecoRepository.save(endereco);
   }
 
-  async update(id: 'identity', endereco: Partial<Endereco>): Promise<Endereco> {
+  async update(id: string, endereco: Partial<Endereco>): Promise<Endereco> {
     await this.enderecoRepository.update(id, endereco);
     return this.enderecoRepository.findOneBy({ id });
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(id: string): Promise<void> {
     await this.enderecoRepository.delete(id);
   }
 }

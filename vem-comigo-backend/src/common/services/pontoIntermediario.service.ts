@@ -14,7 +14,7 @@ export class PontoIntermediarioService {
     return this.pontoIntermediarioRepository.find();
   }
 
-  findOne(id: 'identity'): Promise<PontoIntermediario> {
+  findOne(id: string): Promise<PontoIntermediario> {
     return this.pontoIntermediarioRepository.findOneBy({ id });
   }
 
@@ -22,12 +22,12 @@ export class PontoIntermediarioService {
     return this.pontoIntermediarioRepository.save(pontoIntermediario);
   }
 
-  async update(id: 'identity', pontoIntermediario: Partial<PontoIntermediario>): Promise<PontoIntermediario> {
+  async update(id: string, pontoIntermediario: Partial<PontoIntermediario>): Promise<PontoIntermediario> {
     await this.pontoIntermediarioRepository.update(id, pontoIntermediario);
     return this.pontoIntermediarioRepository.findOneBy({ id });
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(id: string): Promise<void> {
     await this.pontoIntermediarioRepository.delete(id);
   }
 }

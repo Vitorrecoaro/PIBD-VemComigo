@@ -13,7 +13,7 @@ export class ComunicaController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Comunica> {
-    return this.comunicaService.findOne("identity");
+    return this.comunicaService.findOne(id);
   }
 
   @Post()
@@ -23,11 +23,11 @@ export class ComunicaController {
 
   @Put(':id')
   update(@Param('id') id: string, @Body() comunica: Partial<Comunica>): Promise<Comunica> {
-    return this.comunicaService.update("identity", comunica);
+    return this.comunicaService.update(id, comunica);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.comunicaService.remove(+id);
+    return this.comunicaService.remove(id);
   }
 }

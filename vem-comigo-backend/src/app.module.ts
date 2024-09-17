@@ -5,15 +5,18 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Usuario, Brasileiro, Estrangeiro, Caronista, Caroneiro, Telefone, Endereco, Veiculo, Carona, PontoIntermediario, Comunica, Avalia, Solicitacao } from './entity/index';
 
 import { AvaliaModule } from './common/modules/avalia.module';
+import { BrasileiroModule } from './common/modules/brasileiro.module';
 import { CaronaModule } from './common/modules/carona.module';
+import { CaroneiroModule } from './common/modules/caroneiro.module';
+import { CaronistaModule } from './common/modules/caronista.module';
 import { ComunicaModule } from './common/modules/comunica.module';
 import { EnderecoModule } from './common/modules/endereco.module';
+import { EstrangeiroModule } from './common/modules/estrangeiro.module';
 import { PontoIntermediarioModule } from './common/modules/pontoIntermediario.module';
 import { SolicitacaoModule } from './common/modules/solicitacao.module';
 import { TelefoneModule } from './common/modules/telefone.module';
 import { UserModule } from './common/modules/usuario.module';
 import { VeiculoModule } from './common/modules/veiculo.module';
-import { EstrangeiroModule} from './common/modules/estrangeiro.module';
 
 @Module({
   imports: [
@@ -33,7 +36,9 @@ import { EstrangeiroModule} from './common/modules/estrangeiro.module';
       Usuario, Brasileiro, Estrangeiro, Caronista, Caroneiro, Telefone, 
       Endereco, Veiculo, Carona, PontoIntermediario, Comunica, Avalia, Solicitacao
     ]),
-    AvaliaModule, CaronaModule, UserModule, TelefoneModule, ComunicaModule, EnderecoModule, PontoIntermediarioModule, SolicitacaoModule, VeiculoModule, EstrangeiroModule // Importa o módulo de usuários
+    AvaliaModule, BrasileiroModule, CaronaModule, CaroneiroModule, CaronistaModule, 
+    ComunicaModule, EnderecoModule, EstrangeiroModule, PontoIntermediarioModule, 
+    SolicitacaoModule, TelefoneModule, UserModule, VeiculoModule, // Importa o módulo de usuários
   ],
   controllers: [AppController], // Controladores principais
   providers: [AppService],      // Provedores principais

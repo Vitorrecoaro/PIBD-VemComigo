@@ -12,7 +12,7 @@ export class Carona {
   @Column('date', { nullable: false, name: 'data' })
   data!: Date;
 
-  @Column('time', { nullable: false, name: 'hora_fim' })
+  @Column('time', { nullable: false, name: 'hora_inicio' })
 	hora_inicio!: Timestamp;
 
   @Column('time', { nullable: false, name: 'hora_fim' })

@@ -13,7 +13,7 @@ export class CaronaController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Carona> {
-    return this.caronaService.findOne("identity");
+    return this.caronaService.findOne(id);
   }
 
   @Post()
@@ -23,11 +23,11 @@ export class CaronaController {
 
   @Put(':id')
   update(@Param('id') id: string, @Body() carona: Partial<Carona>): Promise<Carona> {
-    return this.caronaService.update("identity", carona);
+    return this.caronaService.update(id, carona);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.caronaService.remove(+id);
+    return this.caronaService.remove(id);
   }
 }

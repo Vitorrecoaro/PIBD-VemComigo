@@ -13,7 +13,7 @@ export class EnderecoController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Endereco> {
-    return this.enderecoService.findOne("identity");
+    return this.enderecoService.findOne(id);
   }
 
   @Post()
@@ -23,11 +23,11 @@ export class EnderecoController {
 
   @Put(':id')
   update(@Param('id') id: string, @Body() endereco: Partial<Endereco>): Promise<Endereco> {
-    return this.enderecoService.update("identity", endereco);
+    return this.enderecoService.update(id, endereco);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.enderecoService.remove(+id);
+    return this.enderecoService.remove(id);
   }
 }

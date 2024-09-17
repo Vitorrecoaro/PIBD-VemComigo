@@ -13,7 +13,7 @@ export class SolicitacaoController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Solicitacao> {
-    return this.solicitacaoService.findOne("identity");
+    return this.solicitacaoService.findOne(id);
   }
 
   @Post()
@@ -23,11 +23,11 @@ export class SolicitacaoController {
 
   @Put(':id')
   update(@Param('id') id: string, @Body() solicitacao: Partial<Solicitacao>): Promise<Solicitacao> {
-    return this.solicitacaoService.update("identity", solicitacao);
+    return this.solicitacaoService.update(id, solicitacao);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.solicitacaoService.remove(+id);
+    return this.solicitacaoService.remove(id);
   }
 }

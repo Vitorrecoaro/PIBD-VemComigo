@@ -23,7 +23,7 @@ export class Veiculo {
   placa!: string;
 
   @Column('int', { nullable: false, name: 'ano' })
-	ano!: number;
+	ano!: number;   
 
   @OneToOne(() => Carona, carona => carona.veiculo)
   carona!: Carona;

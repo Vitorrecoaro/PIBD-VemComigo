@@ -14,7 +14,7 @@ export class SolicitacaoService {
     return this.solicitacaoRepository.find();
   }
 
-  findOne(id: 'identity'): Promise<Solicitacao> {
+  findOne(id: string): Promise<Solicitacao> {
     return this.solicitacaoRepository.findOneBy({ id });
   }
 
@@ -22,12 +22,12 @@ export class SolicitacaoService {
     return this.solicitacaoRepository.save(solicitacao);
   }
 
-  async update(id: 'identity', solicitacao: Partial<Solicitacao>): Promise<Solicitacao> {
+  async update(id: string, solicitacao: Partial<Solicitacao>): Promise<Solicitacao> {
     await this.solicitacaoRepository.update(id, solicitacao);
     return this.solicitacaoRepository.findOneBy({ id });
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(id: string): Promise<void> {
     await this.solicitacaoRepository.delete(id);
   }
 }

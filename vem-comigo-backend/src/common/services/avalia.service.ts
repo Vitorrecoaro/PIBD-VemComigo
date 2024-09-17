@@ -14,7 +14,7 @@ export class AvaliaService {
     return this.avaliaRepository.find();
   }
 
-  findOne(id: 'identity'): Promise<Avalia> {
+  findOne(id: string): Promise<Avalia> {
     return this.avaliaRepository.findOneBy({ id });
   }
 
@@ -22,12 +22,12 @@ export class AvaliaService {
     return this.avaliaRepository.save(avalia);
   }
 
-  async update(id: 'identity', avalia: Partial<Avalia>): Promise<Avalia> {
+  async update(id: string, avalia: Partial<Avalia>): Promise<Avalia> {
     await this.avaliaRepository.update(id, avalia);
     return this.avaliaRepository.findOneBy({ id });
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(id: string): Promise<void> {
     await this.avaliaRepository.delete(id);
   }
 }

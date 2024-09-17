@@ -2,14 +2,15 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { UsuarioService } from '../services/usuario.service';
 import { Usuario } from '../../entity/usuario.entity';
 
-@Controller('users')
+@Controller('usuario')
 export class UsuarioController {
-  constructor(private readonly userService: UsuarioService) {}
+  constructor(private readonly usuarioService: UsuarioService) {}
 
   @Get()
   async findAll() {
     try {
-      const data = await this.userService.findAll();
+      const data = await this.usuarioService.findAll();
+      console.log('Dados retornados pelo banco:', data);
       return {
         success: true,
         data,
@@ -21,21 +22,21 @@ export class UsuarioController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Usuario> {
-    return this.userService.findOne("identity");
+    return this.usuarioService.findOne(id);
   }
 
   @Post()
   create(@Body() user: Usuario): Promise<Usuario> {
-    return this.userService.create(user);
+    return this.usuarioService.create(user);
   }
 
   @Put(':id')
   update(@Param('id') id: string, @Body() user: Partial<Usuario>): Promise<Usuario> {
-    return this.userService.update("identity", user);
+    return this.usuarioService.update(id, user);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.userService.remove(+id);
+    return this.usuarioService.remove(+id);
   }
 }

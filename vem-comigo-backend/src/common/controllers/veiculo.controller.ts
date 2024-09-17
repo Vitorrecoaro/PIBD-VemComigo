@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { VeiculoService } from '../services/veiculo.service';
 import { Veiculo } from '../../entity/veiculo.entity';
 
-@Controller('veiculos')
+@Controller('veiculo')
 export class VeiculoController {
   constructor(private readonly veiculoService: VeiculoService) {}
 
@@ -13,7 +13,7 @@ export class VeiculoController {
 
   @Get(':renavam')
   findOne(@Param('renavam') renavam: string): Promise<Veiculo> {
-    return this.veiculoService.findOne("identity");
+    return this.veiculoService.findOne(renavam);
   }
 
   @Post()
@@ -23,11 +23,11 @@ export class VeiculoController {
 
   @Put(':renavam')
   update(@Param('renavam') renavam: string, @Body() veiculo: Partial<Veiculo>): Promise<Veiculo> {
-    return this.veiculoService.update("identity", veiculo);
+    return this.veiculoService.update(renavam, veiculo);
   }
 
   @Delete(':renavam')
   remove(@Param('renavam') renavam: string): Promise<void> {
-    return this.veiculoService.remove(+renavam);
+    return this.veiculoService.remove(renavam);
   }
 }

@@ -14,7 +14,7 @@ export class ComunicaService {
     return this.comunicaRepository.find();
   }
 
-  findOne(id: 'identity'): Promise<Comunica> {
+  findOne(id: string): Promise<Comunica> {
     return this.comunicaRepository.findOneBy({ id });
   }
 
@@ -22,12 +22,12 @@ export class ComunicaService {
     return this.comunicaRepository.save(comunica);
   }
 
-  async update(id: 'identity', comunica: Partial<Comunica>): Promise<Comunica> {
+  async update(id: string, comunica: Partial<Comunica>): Promise<Comunica> {
     await this.comunicaRepository.update(id, comunica);
     return this.comunicaRepository.findOneBy({ id });
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(id: string): Promise<void> {
     await this.comunicaRepository.delete(id);
   }
 }

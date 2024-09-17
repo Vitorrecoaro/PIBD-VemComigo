@@ -14,7 +14,7 @@ export class TelefoneService {
     return this.telefoneRepository.find();
   }
 
-  findOne(id: 'identity'): Promise<Telefone> {
+  findOne(id: string): Promise<Telefone> {
     return this.telefoneRepository.findOneBy({ id });
   }
 
@@ -22,12 +22,12 @@ export class TelefoneService {
     return this.telefoneRepository.save(telefone);
   }
 
-  async update(id: 'identity', telefone: Partial<Telefone>): Promise<Telefone> {
+  async update(id: string, telefone: Partial<Telefone>): Promise<Telefone> {
     await this.telefoneRepository.update(id, telefone);
     return this.telefoneRepository.findOneBy({ id });
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(id: string): Promise<void> {
     await this.telefoneRepository.delete(id);
   }
 }

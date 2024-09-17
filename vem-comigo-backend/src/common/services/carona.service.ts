@@ -14,7 +14,7 @@ export class CaronaService {
     return this.caronaRepository.find();
   }
 
-  findOne(id: 'identity'): Promise<Carona> {
+  findOne(id: string): Promise<Carona> {
     return this.caronaRepository.findOneBy({ id });
   }
 
@@ -22,12 +22,12 @@ export class CaronaService {
     return this.caronaRepository.save(carona);
   }
 
-  async update(id: 'identity', carona: Partial<Carona>): Promise<Carona> {
+  async update(id: string, carona: Partial<Carona>): Promise<Carona> {
     await this.caronaRepository.update(id, carona);
     return this.caronaRepository.findOneBy({ id });
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(id: string): Promise<void> {
     await this.caronaRepository.delete(id);
   }
 }

@@ -13,7 +13,7 @@ export class AvaliaController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Avalia> {
-    return this.avaliaService.findOne("identity");
+    return this.avaliaService.findOne(id);
   }
 
   @Post()
@@ -23,11 +23,11 @@ export class AvaliaController {
 
   @Put(':id')
   update(@Param('id') id: string, @Body() avalia: Partial<Avalia>): Promise<Avalia> {
-    return this.avaliaService.update("identity", avalia);
+    return this.avaliaService.update(id, avalia);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.avaliaService.remove(+id);
+    return this.avaliaService.remove(id);
   }
 }

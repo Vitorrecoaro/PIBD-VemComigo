@@ -1,6 +1,5 @@
-
-
 <p *ngIf="label !== undefined">{{label}}</p>
-<ion-input fill="outline" [placeholder]="placeholder" [type]="type">
+<ion-input fill="outline" [placeholder]="placeholder" [type]="type" [value]="inputValue"
+  (ionInput)="onValueChange($event)">
   <ion-icon *ngIf="iconName !== undefined" slot="end" [name]="iconName"></ion-icon>
 </ion-input>

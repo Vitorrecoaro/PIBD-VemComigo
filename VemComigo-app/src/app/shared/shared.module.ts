@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputTextComponent } from '../components/generic/input-text/input-text.component';
 import { IonicModule } from '@ionic/angular';
@@ -17,7 +18,7 @@ import { AddVehicleModalComponent } from '../components/modals/add-vehicle-modal
     CarResumedDetailsComponent,
     AddVehicleModalComponent,
   ],
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, FormsModule],
   exports: [
     InputTextComponent,
     ButtonComponent,
@@ -27,4 +28,4 @@ import { AddVehicleModalComponent } from '../components/modals/add-vehicle-modal
     AddVehicleModalComponent,
   ],
 })
-export class SharedModule {}
+export class SharedModule { }

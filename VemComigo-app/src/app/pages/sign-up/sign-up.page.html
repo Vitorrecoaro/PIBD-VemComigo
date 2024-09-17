@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header #header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [appHideHeader]="header" [fullscreen]="true" scrollEvents="true">
   <div class="ion-flex-c ion-align-items-center">
     <img src="../../../assets/imgs/Logo.svg" alt="Vem comigo logo" class="logo-img" />
 

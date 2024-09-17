@@ -13,6 +13,7 @@ import { SolicitacaoModule } from './common/modules/solicitacao.module';
 import { TelefoneModule } from './common/modules/telefone.module';
 import { UserModule } from './common/modules/usuario.module';
 import { VeiculoModule } from './common/modules/veiculo.module';
+import { EstrangeiroModule} from './common/modules/estrangeiro.module';
 
 @Module({
   imports: [
@@ -21,18 +22,18 @@ import { VeiculoModule } from './common/modules/veiculo.module';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'admin',
-      password: 'admin',
+      username: 'postgres',
+      password: 'cachorro',
       database: 'vemcomigodb',
       autoLoadEntities: true, // Carrega automaticamente todas as entidades
-      synchronize: true, // Usar apenas em desenvolvimento. Em produção, use migrações.
+      synchronize: false, // Usar apenas em desenvolvimento. Em produção, use migrações.
     }),
     // Registra as entidades usadas neste módulo
     TypeOrmModule.forFeature([
       Usuario, Brasileiro, Estrangeiro, Caronista, Caroneiro, Telefone, 
       Endereco, Veiculo, Carona, PontoIntermediario, Comunica, Avalia, Solicitacao
     ]),
-    AvaliaModule, CaronaModule, UserModule, TelefoneModule, ComunicaModule, EnderecoModule, PontoIntermediarioModule, SolicitacaoModule, VeiculoModule, // Importa o módulo de usuários
+    AvaliaModule, CaronaModule, UserModule, TelefoneModule, ComunicaModule, EnderecoModule, PontoIntermediarioModule, SolicitacaoModule, VeiculoModule, EstrangeiroModule // Importa o módulo de usuários
   ],
   controllers: [AppController], // Controladores principais
   providers: [AppService],      // Provedores principais

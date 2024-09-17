@@ -53,6 +53,7 @@ CREATE TABLE
     CNH varchar(50) NOT NULL,
     QtdViagens INT NOT NULL,
     MediaNotaCaronista INT,
+    ValidadeCNH VARCHAR(24) NOT NULL,
     FOREIGN KEY (IDUsuario) REFERENCES Usuario (IDUsuario) ON DELETE CASCADE
   );
 
@@ -73,9 +74,7 @@ CREATE TABLE
     TamanhoPortaMalas VARCHAR(50) NOT NULL,
     Placa VARCHAR(50) NOT NULL,
     Ano INT NOT NULL,
-    Proprietario VARCHAR(50),
-    RelacaoComProprietario VARCHAR(50)
-  );
+);
 
 CREATE TABLE
   CaronistaVeiculo (
@@ -120,6 +119,8 @@ CREATE TABLE
     Cidade VARCHAR(50) NOT NULL,
     Bairro VARCHAR(50) NOT NULL,
     Numero INTEGER NOT NULL,
+    Logradouro VARCHAR(255) NOT NULL,
+    TipoPonto INT NOT NULL,
     IDPonto TEXT GENERATED ALWAYS AS (
       IDCarona || '' || Latitude || '' || Longitude || '' || HoraEncontroEstimado::TEXT
     ) STORED,
@@ -131,6 +132,7 @@ CREATE TABLE
     IDRemetente VARCHAR(50) NOT NULL,
     IDDestinatario VARCHAR(50) NOT NULL,
     TimeStampEnvio VARCHAR(24) NOT NULL,
+    TimeStampUltimaEdicao VARCHAR(24) NOT NULL,
     TextoMensagem VARCHAR(255) NOT NULL,
     IDComunica TEXT GENERATED ALWAYS AS (
       IDRemetente || '' || IDDestinatario || '' || TimeStampEnvio::TEXT

@@ -25,11 +25,11 @@ import { VeiculoModule } from './common/modules/veiculo.module';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'admin',
-      password: 'admin',
+      username: 'pedroubuntu',
+      password: 'pedroubuntu',
       database: 'vemcomigodb',
       autoLoadEntities: true, // Carrega automaticamente todas as entidades
-      synchronize: false, // Usar apenas em desenvolvimento. Em produção, use migrações.
+      synchronize: true, // Usar apenas em desenvolvimento. Em produção, use migrações.
     }),
     // Registra as entidades usadas neste módulo
     TypeOrmModule.forFeature([

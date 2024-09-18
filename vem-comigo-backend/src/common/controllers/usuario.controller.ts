@@ -20,10 +20,10 @@ export class UsuarioController {
     }
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string): Promise<Usuario> {
-    return this.usuarioService.findOne(id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string): Promise<Usuario> {
+  //   return this.usuarioService.findOne(id);
+  // }
 
   @Post()
   create(@Body() user: Usuario): Promise<Usuario> {
@@ -38,5 +38,10 @@ export class UsuarioController {
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
     return this.usuarioService.remove(id);
+  }
+
+  @Get(':id')
+  findUserAssesment(@Param('id') id: string): Promise<Usuario> {
+    return this.usuarioService.findUserAssesment(id);
   }
 }

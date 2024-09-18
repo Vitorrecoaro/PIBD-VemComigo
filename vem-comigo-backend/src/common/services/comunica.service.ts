@@ -18,6 +18,8 @@ export class ComunicaService {
     return this.comunicaRepository.findOneBy({ id });
   }
 
+  // findAllMessages(id: string) Promise
+
   create(comunica: Comunica): Promise<Comunica> {
     return this.comunicaRepository.save(comunica);
   }

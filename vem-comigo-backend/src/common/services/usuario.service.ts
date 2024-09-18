@@ -11,11 +11,17 @@ export class UsuarioService {
   ) {}
 
   async findAll(): Promise<Usuario[]> {
-    return await this.usuarioRepository.find();
+    // return await this.usuarioRepository.find();
+    //return await this.usuarioRepository.query(`SELECT * FROM "Usuario"`);
+    return await this.usuarioRepository.query(`SELECT * FROM "Usuario"`);
   }
 
   findOne(id: string): Promise<Usuario> {
     return this.usuarioRepository.findOneBy({ id });
+  }
+
+  async findUserAssesment(id: string): Promise<Usuario> {
+    return await this.usuarioRepository.query(`SELECT * FROM userassessmentview`);
   }
 
   create(user: Usuario): Promise<Usuario> {

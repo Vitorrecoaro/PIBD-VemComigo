@@ -15,14 +15,14 @@ BEGIN
     FROM ridesavailableview AS r 
     WHERE (
       ridehaspointsearchedfunction(
-        r.pontoiniciallatitude,
-        r.pontoiniciallongitude,
+        latitudeInicio,
+        longitudeInicio,
         r.idcarona
       ) 
       AND 
       ridehaspointsearchedfunction(
-        r.pontofinallatitude, 
-        r.pontofinallongitude, 
+        latitudeFim, 
+        longitudeFim, 
         r.idcarona
       )
     ) ;

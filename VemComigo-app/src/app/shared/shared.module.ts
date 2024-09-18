@@ -1,13 +1,40 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputTextComponent } from '../components/generic/input-text/input-text.component';
 import { IonicModule } from '@ionic/angular';
 import { ButtonComponent } from '../components/generic/button/button.component';
 import { RideDetailedCardComponent } from '../components/ride-detailed-card/ride-detailed-card.component';
+import { CarCardComponent } from '../components/car-card/car-card.component';
+import { CarResumedDetailsComponent } from '../components/car-resumed-details/car-resumed-details.component';
+import { AddVehicleModalComponent } from '../components/modals/add-vehicle-modal/add-vehicle-modal.component';
+import { UserResumedDetailsComponent } from '../components/user-resumed-details/user-resumed-details.component';
+import { UserCardComponent } from '../components/user-card/user-card.component';
+import { DriverCardComponent } from '../components/driver-card/driver-card.component';
 
 @NgModule({
-  declarations: [InputTextComponent, ButtonComponent, RideDetailedCardComponent],
-  imports: [CommonModule, IonicModule],
-  exports: [InputTextComponent, ButtonComponent, RideDetailedCardComponent],
+  declarations: [
+    InputTextComponent,
+    ButtonComponent,
+    RideDetailedCardComponent,
+    CarCardComponent,
+    CarResumedDetailsComponent,
+    AddVehicleModalComponent,
+    UserResumedDetailsComponent,
+    UserCardComponent,
+    DriverCardComponent,
+  ],
+  imports: [CommonModule, IonicModule, FormsModule],
+  exports: [
+    InputTextComponent,
+    ButtonComponent,
+    RideDetailedCardComponent,
+    CarCardComponent,
+    CarResumedDetailsComponent,
+    AddVehicleModalComponent,
+    UserResumedDetailsComponent,
+    UserCardComponent,
+    DriverCardComponent,
+  ],
 })
 export class SharedModule {}

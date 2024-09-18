@@ -1,0 +1,12 @@
+<ion-content [fullscreen]="true">
+  <div class="rides-history-container">
+    <img src="../../../assets/imgs/Logo.svg" alt="Vem comigo logo" />
+
+    <ion-card class="card-container">
+      <h1 class="info-row">Histórico de caronas:</h1>
+
+      <app-ride-detailed-card *ngFor="let ride of rides" [ride]="ride"></app-ride-detailed-card>
+      <h4 *ngIf="rides.length === 0">Você não possui caronas no seu histórico</h4>
+    </ion-card>
+  </div>
+</ion-content>

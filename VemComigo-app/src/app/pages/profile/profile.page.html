@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true">
+  <div class="ion-flex-c ion-align-items-center">
+    <ion-icon class="person-photo" name="person-circle"></ion-icon>
+    <h1>Alguém</h1>
+
+    <ion-card class="card-container">
+      <app-generic-input-text placeholder="email@email.com" label="Email" type="email"></app-generic-input-text>
+      <app-generic-input-text placeholder="+55 11 99999-1111" label="Telefone" type="tel"></app-generic-input-text>
+
+      <hr class="card-divider" />
+
+      <h2 class="info-row">Avaliações:</h2>
+
+      <h4 class="info-row">
+        <div class="right-info">Caronista:</div>
+
+        <div class="left-info">
+          4.95
+          <ion-icon src="../../../assets/icons/star-filled.svg" size="large"></ion-icon>
+        </div>
+      </h4>
+
+      <h4 class="info-row">
+        <div class="right-info">Caroneiro:</div>
+
+        <div class="left-info">
+          5.00
+          <ion-icon src="../../../assets/icons/star-filled.svg" size="large"></ion-icon>
+        </div>
+      </h4>
+
+      <hr class="card-divider" />
+
+      <h2 class="info-row">Veículos</h2>
+
+      <app-car-card></app-car-card>
+
+      <ion-button fill="outline" color="app-blue" shape="round" (click)="handleAddNewVehicleButton()">
+        Adicionar novo carro
+      </ion-button>
+    </ion-card>
+  </div>
+</ion-content>

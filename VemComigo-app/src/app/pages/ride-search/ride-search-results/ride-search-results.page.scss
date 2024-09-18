@@ -1,0 +1,19 @@
+.card-container {
+  padding-top: 48px;
+}
+
+.logo-img {
+  height: 25vw;
+  position: relative;
+  bottom: -12.5vw;
+  z-index: 1;
+}
+
+ion-content {
+  --offset-top: 0;
+}
+
+.main-container {
+  position: relative;
+  top: -12.5vw;
+}

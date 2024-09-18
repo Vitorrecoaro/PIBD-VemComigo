@@ -1,0 +1,9 @@
+<ion-header #header class="transparent-toolbar" [translucent]="true">
+  <ion-toolbar class="transparent-toolbar">
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [appHideHeader]="header" [fullscreen]="true" scrollEvents="true">
+  <app-ride-card></app-ride-card>
+</ion-content>

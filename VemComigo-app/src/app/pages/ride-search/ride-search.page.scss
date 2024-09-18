@@ -1,11 +1,3 @@
-ion-content {
-  --background: var(--ion-color-app-light-blue);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 ion-content::part(scroll) {
   padding-top: var(--ion-safe-area-top, 0);
 }

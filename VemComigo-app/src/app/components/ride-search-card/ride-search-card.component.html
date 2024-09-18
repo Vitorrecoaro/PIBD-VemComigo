@@ -1,12 +1,22 @@
 <div class="ride-search-card-container">
   <ion-card>
-    <app-generic-input-text [placeholder]="'São Carlos, SP'" [label]="'De onde você quer viajar?'" [iconName]="'search'">
+    <app-generic-input-text
+      [placeholder]="'São Carlos, SP'"
+      [label]="'De onde você quer viajar?'"
+      [iconName]="'search'"
+      [(inputValue)]="from">
     </app-generic-input-text>
-    <app-generic-input-text [placeholder]="'Campinas, SP'" [label]="'Para onde você quer viajar?'" [iconName]="'search'">
+    <app-generic-input-text
+      [placeholder]="'Campinas, SP'"
+      [label]="'Para onde você quer viajar?'"
+      [iconName]="'search'"
+      [(inputValue)]="to">
     </app-generic-input-text>
-    <app-generic-input-text [placeholder]="'1'" [label]="'Quantas pessoas irão?'" [type]="'number'"> </app-generic-input-text>
-    <app-generic-input-text [placeholder]="" [label]="'Quando pretende ir?'" [type]="'date'"> </app-generic-input-text>
+    <app-generic-input-text [placeholder]="'1'" [label]="'Quantas pessoas irão?'" [type]="'number'" [(inputValue)]="qtdPeople">
+    </app-generic-input-text>
+    <app-generic-input-text [placeholder]="" [label]="'Quando pretende ir?'" [type]="'date'" [(inputValue)]="when">
+    </app-generic-input-text>
   </ion-card>
 
-  <app-button [text]="'Vem comigo!'" [color]="'app-yellow'"></app-button>
+  <app-button [text]="'Vem comigo!'" [color]="'app-yellow'" (buttonClick)="Search()"> </app-button>
 </div>

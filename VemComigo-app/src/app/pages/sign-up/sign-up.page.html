@@ -1,0 +1,44 @@
+<ion-header #header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [appHideHeader]="header" [fullscreen]="true" scrollEvents="true">
+  <div class="ion-flex-c ion-align-items-center">
+    <img src="../../../assets/imgs/Logo.svg" alt="Vem comigo logo" class="logo-img" />
+
+    <ion-card class="card-container">
+      <h1>Cadastro</h1>
+      <app-generic-input-text placeholder="José" label="Nome:" [(inputValue)]="name"></app-generic-input-text>
+      <app-generic-input-text placeholder="da Silva" label="Sobrenome:"
+        [(inputValue)]="surname"></app-generic-input-text>
+      <app-generic-input-text placeholder="josesilva@email.com" label="Email:" type="email"
+        [(inputValue)]="email"></app-generic-input-text>
+      <app-generic-input-text placeholder="Senha" label="Senha:" type="password"
+        [(inputValue)]="password"></app-generic-input-text>
+      <app-generic-input-text placeholder="Confirme a senha" label="Confirmar senha:" type="password"
+        [(inputValue)]="passwordConfirmation"></app-generic-input-text>
+
+      <hr class="card-divider" />
+
+      <app-generic-input-text label="Nacionalidade" placeholder="Brasileiro"
+        [(inputValue)]="nationality"></app-generic-input-text>
+      <app-generic-input-text label="Documento" placeholder="CPF ou Passaporte"
+        [(inputValue)]="document"></app-generic-input-text>
+
+      <hr class="card-divider" />
+
+      <app-generic-input-text label="Endereço" placeholder="Rua das Acácias, Jardim Primavera - São Carlos, SP"
+        [(inputValue)]="address"></app-generic-input-text>
+      <app-generic-input-text label="Complemento" placeholder="Apto 302"
+        [(inputValue)]="complement"></app-generic-input-text>
+      <app-generic-input-text label="CEP" placeholder="10322-402" [(inputValue)]="cep"></app-generic-input-text>
+      <app-generic-input-text label="Número" placeholder="32" [(inputValue)]="number"></app-generic-input-text>
+    </ion-card>
+
+    <app-button color="app-black" text="Cadastrar!" (buttonClick)="SignUp()"></app-button>
+  </div>
+</ion-content>

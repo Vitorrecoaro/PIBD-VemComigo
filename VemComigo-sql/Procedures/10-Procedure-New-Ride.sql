@@ -29,6 +29,12 @@ BEGIN
     INSERT INTO Carona (IDCarona, DataCarona, HoraInicio, HoraFim, PontoInicialLatitude, PontoInicialLongitude, PontoFinalLatitude, PontoFinalLongitude, DuracaoEstimada, VagasTotais, PrecoTotal, Pets, Fumantes, ArCondicionado, IDUsuario, RENAVAM)
     VALUES (p_idcarona, p_datacarona, p_horainicio, p_horafim, p_pontoinicial_latitude, p_pontoinicial_longitude, p_pontofinal_latitude, p_pontofinal_longitude, p_duracaoestimada, p_vagastotais, p_precototal, p_pets, p_fumantes, p_arcondicionado, p_idusuario, p_renavam);
     
+    INSERT INTO PontoIntermediario (idcarona, latitude, longitude, horaencontroestimado, tipoponto) 
+    VALUES (p_idcarona, p_pontoinicial_latitude, p_pontoinicial_longitude, p_horainicio, 0);
+
+    INSERT INTO PontoIntermediario (idcarona, latitude, longitude, horaencontroestimado, tipoponto) 
+    VALUES (p_idcarona, p_pontofinal_latitude, p_pontofinal_longitude, p_horainicio, 2);
+
     -- Mensagem de sucesso
     RAISE NOTICE 'Carona cadastrada com sucesso: IDCarona = %', p_idcarona;
 END;

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,7 +19,7 @@ export class SignUpPage {
   cep: string = '';
   number: string = '';
 
-  constructor() { };
+  constructor(private router: Router) { }
 
   public async SignUp() {
     console.log('Nome:', this.name);
@@ -33,5 +34,7 @@ export class SignUpPage {
     console.log('CEP:', this.cep);
     console.log('Número:', this.number);
     // Logica de cadastro...
+
+    await this.router.navigate(['']);
   }
 }
